@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Big white</title>
+</head>
+<style>
+*{
+margin: 0;
+padding: 0;
+}
+body
+{
+height: 100vh;
+/* background-color: rgb(96, 157, 168); */
+background: radial-gradient(circle at center,#ffff,#fff 50%,rgb(146, 140, 140));           /*从白色环形渐变aaa色*/
+background-size: 100%;
+background-repeat: no-repeat;
+}
+.baymax{  /*大白角色*/
+    /* width: 10rem;
+    font-size: 14px;
+    height: 10em;
+    background-color: rgb(73, 153, 136); */
+    border-bottom: 1.5em solid #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%,-40%);
+
+}
+  /* 大白共同部分 */
+.baymax:before,.baymax:after{       
+    content: ""  ;
+    background-color: #000; 
+    width: 12em;
+    height:12em;
+    position: absolute;
+    top: -6em;
+    border-radius: 50%;
+    background: linear-gradient(to bottom,#eeffee,#eeffee 50%,#000 50%,#000);   /*线性渐变*/
+    background-position: 0 -100%;
+    background-size: 200% 200%;  /*设置背景大小*/
+ 
+}
+
+.baymax:before
+{
+    left: -9em;
+    transform: skewX(6deg);
+    animation: blink 6s infinite;
+}
+.baymax:after{       
+  
+    right: -9em;
+    transform: skewX(-6deg);
+    animation: blink 6.2s infinite;
+}
+@keyframes blink
+{
+    0%,50%{
+        background-position: 0 100%;
+    }
+    85% ,95%{
+        background-position:0 75%;
+    }
+    100%{
+        background-position: 0 100%;
+    }
+}
+</style>
+<body>
+    <div class="baymax"> 
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+.weui-cells{
+    font-size: 17px;
+    line-height: 1.47058824;  
+    background-color: #fff;
+    overflow: hidden;  /*子元素超出原来的父元素则隐藏*/
+    position: relative;
+    margin-top: 1.17647059em;
+    
+    }
+    /* cell边框上下 border是盒子模型的一部分，用Border会影响盒子的大小 用伪元素不会影响盒子大小 */
+    .weui-cells:before{
+        /* 定位会让元素离开文档流 */
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        right: 0;
+        /*实现微信支付那根细线*/
+        height: 1px;
+        border-top:1px solid rgb(204, 198, 198);
+        /* background-color: rgb(199, 91, 109); */
+        transform: scaleY(.5);
+        transform-origin: 0 0 ;
+    }
+    .weui-cells::after{
+        content:"";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        border-bottom: 2px solid #e5e5e5;
+        transform: scaleY(0.5);
+        transform-origin: 0 100%;
+    }
+    .weui-cell{
+        padding: 10px 15px;
+        position: relative;
+        display: flex;
+        align-items: center;  /*在Y轴上居中*/
+
+
+    }
+    .weui-cell__bd{
+        flex:1;
+    }

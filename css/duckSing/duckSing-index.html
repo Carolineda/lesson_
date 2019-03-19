@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //jscon object
+    let choir=[];  //合唱团 数组命名 es6声明变量
+
+    const duck={
+      
+        //简写  keyvalue 对象里面的方法
+        duckSingsing(){
+            
+            console.log('嘎嘎嘎');  //对象内部拥有方法
+        },
+    }
+    //const joinChoir; =(animal)=>{ //加入函数  变量赋值 常量传入函数
+
+     const dog={
+      duckSingsing()
+      {
+          console.log('嘎嘎嘎');
+      }
+     }
+    let joinChoir;
+     joinChoir = 2;
+     joinChoir=(animal)=>
+     { 
+         //规避不合法的 检验
+        //if(animal!=null)
+        if(animal && typeof animal.duckSingsing==='function')    //判断其合格 ===恒等
+        {
+         choir.push(animal);
+         console.log('欢迎来到合唱团');  //
+        //  console.log(choir.length);
+
+        }
+     };
+     for(let i=0;i<999;i++) //鸭子加入的数量
+     {
+      joinChoir(duck);
+     }
+     console.log('数量为：',choir.length);
+     joinChoir(dog);
+     console.log('数量为：',choir.length);
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name="大黄呀";
+       
+        function dogName(){
+            // 函数局部作用域
+
+            //在函数运行时 诞生
+            var dog="狗子";
+            //运行结束后，回收
+        }
+        //{}在此代表的是块级作用域
+       if(true) {
+            const teacher="小奶狗";
+
+        }
+        //let 定义和var 区别
+        for(var i=0;i<10;i++)
+        {
+            console.log(i);
+            setTimeout(function(){
+
+                console.log('the number is'+i)
+            },1000);
+        }
+        // for(let i=0;i<10;i++)
+        // {
+        //     console.log(i);
+        //     setTimeout(function(){
+
+        //         console.log('the number is'+i)
+        //     },1000);
+        // }
+        console.log(name);
+        console.log(teacher);
+        </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+width: 100%;
+height: 100%;
+font-size:20px ;
+}
+.page
+{
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.page-header{
+    width: 100%;
+}
+.page-header__pic{
+    width: 100%;
+    height: 200px;
+   background: url("./a.jpg" )no-repeat;
+    background-size: cover;
+}
+.page-header__userinfo{
+padding: 10px 10px 13px 10px;
+position: relative;
+}
+.name{
+    line-height: 1;
+}
+.labels{
+    margin-top: 10px;
+}
+.label
+{
+padding: 5px 10px;
+color: aliceblue;
+font: serif 14px;
+border-radius: 5px;
+}
+.blue{
+    background-color: rgb(166, 166, 247);
+}
+.green{
+    background-color: rgb(154, 230, 204);
+}
+.pink{
+    background-color: rgb(248, 153, 185);
+}
+ul li{
+    list-style: none;
+}
+.page-header__msg{
+    margin-top: 10px;
+}
+.item{
+    width: 130px;
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+}
+.city::before 
+{
+    content: "";
+    width: 22px;
+    height: 26px;
+    background: url("./location.png")no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;top: 0;
+}
+.job::before{
+    content: "";
+    width: 22px;
+    height: 26px;
+    background: url('./zhiye.png');
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;top: 0;
+}
+.like::before{
+    content: "";
+    width: 22px;
+    height: 26px;
+    background: url('./aixin.png');
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;top: 0;
+}
+.wechat::before{
+    content: "";
+    width: 22px;
+    height: 26px;
+    background: url('./weixin.png');
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;top: 0;
+}
+.phone::before{
+    content: "";
+    width: 22px;
+    height: 26px;
+    background: url('./tel.png');
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;top: 0;
+}
+.ewm{
+    width: 34px;
+    height: 33px;
+    position: absolute;
+    top: 32px;
+    right: 11px;
+ 
+
+}
+.ewm img{
+display: block;
+width: 100%;
+height: 100%;
+
+}
+.evenlope{
+    width: 55px;
+    height: 50px;
+    position: absolute;
+    right: 4px;
+    bottom: 0;
+}
+.evenlope img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}

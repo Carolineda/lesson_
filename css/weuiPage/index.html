@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+   <div class="page button js_show">
+     <div class="page_bd page_bd_spacing">
+             <a href="#" class="weui-btn weui-btn_primary"id="primary">页面主操作 normal</a>
+             <a href="#"class="weui-btn weui-btn_primary weui-btn_loading"id="loading"><i class="weui-loading"></i> 页面主操作loading</a>
+             <a href="#"class="weui-btn weui-btn_disabled">页面主操作 Disabled</a>
+             <a href="#"class="weui-btn weui-btn_cancle">取消操作 </a>
+    </div>
+    </div>
+    </div>
+<script>
+    /*点击按钮loading 其内容文字被替换*/
+    var oLoading =document.getElementById('loading');
+    console.log(oLoading);
+ 
+    oLoading.onclick=function(){
+        console.log('123');
+        this.innerHTML='Nice @';
+    //    this.classList.add('actv');
+       setTimeout(() => {
+           this.classList.remove('remove.innerHTML');
+       }, 2000);
+    }
+    var oPrimary=document.getElementById('primary');
+    oPrimary.onclick=function(){
+        /*jsAPI*/
+    this.classList.add('active');
+
+      /*this作用域的改变  setTime 修改作用域es5*/
+    // var _this=this;
+    //    /*  点击过2秒时间自动移除*/
+    // setTimeout(function() {
+    //     console.log(this)
+    //     _this.classList.remove('active')
+    // }, 2000);
+
+
+    //es6 setTime函数不会改变作用域
+    setTimeout(() => {
+        this.classList.remove('active')
+    },2000);
+    }
+ 
+</script>
+</body>
+</html>
