@@ -1,0 +1,16 @@
+{
+  "name": "js_test",
+  "version": "1.0.0",
+  "description": "代码 + 测试 = 上线\r     代码自写自测\r   -  babel 测试js  es6=>es5\r      eslint  确保js是否工整\r      stylus\r      mocha\r      webpack",
+  "main": "index.js",
+  "scripts": {
+    "mocha":"mocha tests/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}
