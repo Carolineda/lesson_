@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- 文档流  盒子模型 -->
+    <!-- section是语义化标签，其兼容性 -->
+    <div class="section">
+        <!-- 容器  -->
+        <div class="wrapper">
+            <!-- 两列式布局  main  side,先写side浮动，离开文档流-->
+            <div class="side">
+                <div class="online">
+                    <div class="mod">
+                        <h2>热门话题
+                        <span class="pl">
+                            &nbsp;(
+                                <a href="#" target="_self">去话题广场 </a>
+                           )  
+                        </span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="main"></div>
+        </div>
+    </div>
+</body>
+</html>

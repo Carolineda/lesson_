@@ -1,0 +1,5 @@
+/* pages/profile/profile.wxss */
+page{
+    background-color: rgb(239, 243, 226);
+    line-height: 1.6;
+}

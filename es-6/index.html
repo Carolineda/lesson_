@@ -46,8 +46,16 @@
 //     console.log(s[i]);
 // }
 // console.log(i);
-function f(){console.log('nice');}
-f();
-    </script>
+// function f(){console.log('nice');}
+// f();
+var sData = 'Wisen';
+
+function display() {
+  console.log('sData value is %s ', this.sData);
+}
+
+display.call();
+
+</script>
 </body>
 </html>

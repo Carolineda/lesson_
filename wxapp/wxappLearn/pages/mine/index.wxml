@@ -1,0 +1,8 @@
+<!--pages/mine/index.wxml-->
+<!-- wx:for -->
+<view>
+<ul >
+    <!-- for循环不需要数组下标 默认item -->
+    <li wx:for="{{people}}">{{item.name}}</li>
+</ul>
+</view>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> URL</title>
+</head>
+<body>
+    <!--  -->
+    <a href="?name=lilei&sex=female">Search</a>
+    <a href="?name=dahuang&sex=male">dahuang</a>
+
+    <script>
+        const search=location.search;
+        console.log(search);
+
+        if(search)
+        {
+            // API URLSearchParams
+            const paramsObj= new URLSearchParams(search);
+            console.log(paramsObj);
+            console.log(paramsObj.get('name'));
+            console.log(paramsObj.get('sex'));
+
+        }
+
+        // 把search部分的查询项拆分
+        function getQueryString(){
+            // ?name=lilei&sex=female
+            let obj={};
+            // 截取？后面的字符串 以&分割
+            const search = location.search.substr(1);
+            const searchArr= search.split(/&/g);
+            console.log(searchArr);
+
+            //searchArr： ["name=dahuang", "sex=male"]
+            searchArr.forEach(item => {
+                const ret = item.split('=');
+                obj[ret[0]]=ret[1];
+            })
+            return obj;
+            // return {
+            //     name:'lilei',
+            //     sec:'female'
+            // }
+        }
+        getQueryString();
+    </script>
+</body>
+</html>

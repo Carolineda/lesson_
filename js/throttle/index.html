@@ -1,0 +1,67 @@
+<!-- 面试  throttle -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Throttle 防抖</title>
+</head>
+<body>
+    <div class="row">
+        <input type="text" id="unDebounce">
+    </div>
+    <div class="row">
+        <input type="text" id="debounce">
+    </div>
+        <script>
+            //异步 ，主动请求 会给服务器端带来压力
+        function ajax(content)
+        {
+            // 通过XMLHttpRequest数据请求
+           
+            // 事件监听 ajax获取 
+            console.log('ajax request: ' + content);  
+        }
+
+             let inputa=document.getElementById('unDebounce');
+             let debounceA=document.getElementById('debounce');
+             debounceA.addEventListener('keyup',function(e){
+                //  不能直接ajax()，最后还是要实现ajax
+                // ajax(e.target.value);
+                debounceAjax(e.target.value);
+             });
+             var debounceAjax=debounce(ajax,500);
+             /**
+              * @功能
+              * @param function
+              * @param delay number
+              * @return function  
+              * 输入完整打印
+             */
+
+             function debounce(func,delay){
+                //  let _timeout;  //永生
+                //  闭包
+                let i=0;
+                return function(args){
+                    i++;
+                    // func(args);
+
+                   console.log('clear',func.id,i);
+                   clearTimeout(func.id);
+                    var that=this;
+                    func.id=setTimeout(function(){
+                        // this 全局
+                        func.call(that,args);
+                    },delay);
+                    console.log(func.id,'------',i);
+                }
+             }
+            
+            inputa.addEventListener('keyup',function(e){
+            ajax(e.target.value);  
+            })
+        </script>
+</body>
+</html>

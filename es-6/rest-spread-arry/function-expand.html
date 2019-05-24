@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>function</title>
+</head>
+<body>
+    <script>
+    function Person(nickName='未知'){
+        // es5
+        // if(!nickName)
+        // {
+        //     nickName='未知';
+        // }    或运算符
+        // this.nickName=nickName||'未知';
+
+        this.nickName=nickName
+    }
+    // p1{nickName:'狗子'}
+    const p1=new Person('狗子');
+    //p2{nickName:''}
+    const p2=new Person();
+    // ...为rest参数 形式...+变量名(数组)   获取多余参数。变量名是数组 把多余的放入数组中 sum(a,...args)
+     function sum(a,...args){
+         console.log(args);
+        //  转为正真数组   
+        //  Array.from(arguments);
+        //  console.log(arguments);
+     }
+     sum(2,4,6,8);
+    </script>
+</body>
+</html>

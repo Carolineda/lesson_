@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>倒序原理</title>
+</head>
+<body>
+    <!-- <script>
+        let arr=[1,2,3,4,5]
+        function res(num){
+            let s=num.toString()
+            // 赋予新的空的数组，遍历后传入数组
+            let a=[]
+            // console.log(s[0])
+            // for循环遍历  遍历字符串 从0开始遍历
+            for(let i=0;i<s.length;i++){
+            // 循环遍历倒序  
+               a.unshift(s[i])
+            }
+            return a.join(' ')
+            
+        }
+        console.log(res('abgd'))
+        console.log(arr)
+        
+        res(arr)
+    </script> -->
+
+
+
+    <!--最小值排序  sort 不能识别第二位排序  一大串数据 拼接一个最小值-->
+    <script>
+    function minNumber(numbers){
+        // 用compare 函数 回调
+        numbers.sort(compare)
+        let res='';
+        for(let i=0;i<numbers.length;i++)
+        {
+            res+=numbers[i]
+        }
+        return res
+    }
+    // 弥补sort方法
+    function compare(a,b)
+    {
+        // ""是拼接字符串
+        // 传入 最小值最大值
+        let str1=a +"" +b
+        let str2=b+ ""+a
+        // chartAt()截取字符串 通过下标
+        // console.log(str1.charAt(0))
+
+
+        for(let i=0;i<str1.length;i++){
+
+            // 比较两个数下标的同一位
+            if(str1.charAt(i)>str2.charAt()){
+                return 1
+            }
+            // 小于 返回false
+            if(str1.charAt(i)<str2.charAt(i)){
+                return -1
+            }
+            }
+            return true
+    }
+//    console.log(minNumber([6,5,8,9,8,1,2])) 
+    // compare(2,5)
+    console.log(minNumber([64,54,18,29])) 
+ 
+    </script>
+
+</body>
+</html>

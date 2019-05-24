@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>array</title>
+</head>
+<body>
+    <script>
+        // 查找22位置  找不到的值index返回-1
+        const ages=[{
+            name:'大黄',age:8
+        },
+        {
+            name:'苏大强',age:12
+        },
+        {
+            name:'苏大强1',age:15
+        },
+        ];
+
+        const this_age= ages.find((person)=>{
+            return person.age>10;
+        });
+       const this_age_index= ages.findIndex((person)=>{
+            return person.age===12
+        });
+        console.log('年龄：'+this_age, ' 位置：'+this_age_index);
+    </script>
+</body>
+</html>

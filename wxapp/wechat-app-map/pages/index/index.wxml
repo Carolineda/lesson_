@@ -1,0 +1,9 @@
+<!--index.wxml 地图-->
+<view class="map-box">
+  <map id="myMap" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}"
+  markers="{{markers}}"
+  show-location='true'
+  >
+
+  </map>
+</view>

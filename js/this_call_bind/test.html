@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+    //     'use strict';
+    //     window.myName='wemi';
+    //     var obj={
+    //         myName:'sven',
+    //         getName:function(){
+    //             return this.myName;
+    //         }
+    //     }
+    //    console.log(obj.getName()) ;
+    //    var getName2=obj.getName; //生成期
+    //    console.log(getName2)
+    // //    this 丢失问题
+    // //    console.log(getName2()); 
+
+    // 封装函数
+    // var getId=function(id){
+    //     return document.getElementById(id);
+    // }
+    // getId('div1');
+    // console.log(getId('div1'));
+
+    // getid运行时 document是内部实现的方法 在运行时this丢失
+    // var getId =document.getElementById;
+    // console.log(getid('div1'));
+
+
+
+    // 闭包可以让函数运行时找到定义时的变量  document.getElementById传给func
+    document.getElementById=(function(func){
+        // 立即执行函数创建闭包的最佳手段
+        return function(){  //闭包
+            return func.apply(document,arguments);
+        }
+    })(document.getElementById);
+    var getId=document.getElementById;
+    console.log(getId('div1'));
+    </script>
+</body>
+</html>

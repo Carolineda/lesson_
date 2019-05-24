@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view class="main">
+<!-- 搜索框 -->
+  <view class='section searchBar '>
+      <view class='search_box {{isTap?"tap":""}}' >
+         <icon class='search_icon' type='search' size='15'></icon>
+         <input class='in_search' type='text' disabled="true" placeholder='搜索商品' bindtap="toSearch"></input>
+      </view>
+   </view>
+
+   <!-- swiper --> 
+  <view class="header">
+    <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}" style="heigh:{{heigh}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" style='width:100%'/>
+      </swiper-item>
+    </block>
+  </swiper>
+  </view>
+
+  <!--商品导航  -->
+  <view class="section navBar">
+    <view class="section-navBar-first">
+      <navigator class="navBar-items" wx:for="{{navBar}}" wx:key="{{index}}">
+        <image class="navBar-img" src="{{item.img}}" />
+          <!-- <text class='navBar-name'>{{item.name}}</text> -->
+      </navigator>
+    </view>
+    <view class="section-navBar-second">
+       <navigator class="navBar-items" wx:for="{{navBarSecond}}" wx:key="{{index}}">
+        <image class="navBar-img" src="{{item.img}}" />
+          <!-- <text class='navBar-name'>{{item.name}}</text> -->
+      </navigator>
+    </view>
+  </view>
+</view> 
+
+<!-- 人气推荐 -->
+<view class="recommend">
+  <view class="recommend-title">
+    <text class="in-recommend">人气推荐</text>
+  </view>
+  <view class="recommend-goods">
+    <image src="https://i8.mifile.cn/v1/a1/1a01e9ef-0f99-a713-ea05-64fffa4c8a8c!720x280.webp" style="width:100%" />
+    
+  </view>
+</view>

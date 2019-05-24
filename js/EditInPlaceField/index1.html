@@ -13,6 +13,7 @@
 
     </div>
     <script>
+        // 构造函数构造类
         function EditInPlace(id, value,
             parentElement) {
             this.id = id;
@@ -26,52 +27,41 @@
         //   <input type="text" id="input" value="明德厚学 爱国荣校" style="display: none;">
         //   <input type="button" id="save" value="Save" style="display: none;">
         //   <input type="button" id="cancel" value="Cancel" style="display: none;">
-        // </div>
+        // </div> 原型构造元素
         EditInPlace.prototype.
             createElement = function (id) {
-                this.containerElement = document
-                    .createElement('div');
+                this.containerElement = document.createElement('div');
                 this.containerElement.id = id;
-                this.parentElement
-                    .appendChild(this.containerElement);
+                this.parentElement.appendChild(this.containerElement);
 
                 // 值
-                this.staticElement = document
-                    .createElement('span');
-                this.staticElement
-                    .innerHTML = this.value;
-                this.containerElement
-                    .appendChild(this.staticElement);
+                this.staticElement = document.createElement('span');
+                this.staticElement.innerHTML = this.value;
+                this.containerElement.appendChild(this.staticElement);
 
-                // 输入框
-                this.fieldElement = document
-                    .createElement('input');
+                // 输入框 用动态
+                this.fieldElement = document.createElement('input');
                 this.fieldElement.type = 'text';
                 this.fieldElement.value = this.value;
-                this.containerElement
-                    .appendChild(this.fieldElement);
+                this.containerElement.appendChild(this.fieldElement);
 
                 // save Btn
-                this.saveButton = document
-                    .createElement('input');
+                this.saveButton = document.createElement('input');
                 this.saveButton.type = 'button';
                 this.saveButton.value = 'Save';
-                this.containerElement
-                    .appendChild(this.saveButton);
+                this.containerElement.appendChild(this.saveButton);
 
                 // cancel btn
-                this.cancelButton = document
-                    .createElement('input');
+                this.cancelButton = document.createElement('input');
                 this.cancelButton.type = 'button';
                 this.cancelButton.value = 'Cancel';
-                this.containerElement
-                    .appendChild(this.cancelButton);
-                // view
+                this.containerElement.appendChild(this.cancelButton);
+                // view 切换显示状态
                 this.convertToText();
                 this.attachEvent();
             }
-        EditInPlace.prototype
-            .convertToText = function () {
+            // 对象
+        EditInPlace.prototype.convertToText = function () {
                 this.saveButton.style.display = 'none';
                 this.cancelButton.style.display = 'none';
                 this.fieldElement.style.display = 'none';
@@ -93,7 +83,7 @@
                             console.log('arrow fun', this);
                             this.convertToEditAble();
                         });
-                        
+
                         // 内容保存
                 this.saveButton.addEventListener('click', () => {
                     const val = this.fieldElement.value;
@@ -116,9 +106,8 @@
         const ed2 = new EditInPlace(
             'ep1',
             "崇义奉公",
-            document.getElementById('app')
+            document.getElementById('app')  /* 将其挂在在app节点*/
         );
-
         const obj = {
             name: 'meimei',
             getName: () => {

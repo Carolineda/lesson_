@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const li = {
+            mgs: 'this is dog'
+        }
+        const h={
+            mgs:'大黄'
+        }
+        function li_func() {
+
+            var arrow_li_func = () => {
+                console.log(this);
+                console.log(this.mgs);
+            }
+            //  arrow_li_func();
+        // arrow_li_func.call(h);
+            //   console.log('arrow-this');
+        }
+     
+    li_func.call(li);
+
+    // es6
+    // var arrow_li_func=()=>{
+    //     console.log(this);
+    //     console.log(this.mgs);
+    // }
+    // console.log('es6');
+
+    </script>
+</body>
+
+</html>

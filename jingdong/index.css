@@ -121,6 +121,8 @@ left: 0;
     margin-top: 4.26rem;
     background-size: 32.49rem 2.26rem;
 }
+.p2 .text-top, .p2 .text-bottom{
+    background-size: 32.49rem 2.26rem;}
 .p2 .text-bottom
 {
 width: 3.4rem;

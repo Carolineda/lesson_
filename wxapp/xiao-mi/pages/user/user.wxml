@@ -1,0 +1,37 @@
+<!--pages/user/user.wxml-->
+<view class="main">
+    <view class="header">
+        <open-data type="userAvatarUrl" class="thumb"></open-data>
+        <open-data type="userNickName" lang="zh_CN" class="nickname"></open-data> 
+        <view class="about">
+            <view class="pic">
+                <image src="../../images/二维码.png" />
+            </view>
+        </view>
+        <view class="about">
+        </view>
+    </view>
+    <view class="address-box">
+        <view class="address-manage">
+           <text>小米精品推荐(内测)</text>
+        </view>
+            <view  class="address-list">
+            </view>
+    </view>
+    <view class="orders-box">
+        <view class="orders">
+        我的订单</view>
+        <view class="vip"> 
+            <view class="vip-pic">
+                <image src="../../images/会员.png" />     
+             </view> <span>会员中心</span>
+            </view>
+        <view class="discount"> 我的优惠券</view>
+        <view class="f"> 我的F码</view>
+    </view>
+    <view class="setting-box">
+    <view class="setting">设置</view>
+    </view>
+
+</view>
+

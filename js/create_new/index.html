@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // es5构建类
+        function Otaku(name,age)
+        {
+            // this指向实例化空的对象
+            this.name=name;
+            this.age=age;
+        }
+
+        Otaku.prototype.strength=20;
+        Otaku.prototype.sayYourName=function(){
+            console.log('Name :'+this.name);
+        }
+        var dh=new Otaku("大黄呀",12);
+        var gy=new Otaku("小老弟儿",16);
+        // 代替new实现效果
+        function objectFactory(conFn,name,age){
+
+        // 三个形参 一个构造函数加上两个属性
+        // 1. 返回一个空的对象
+            var obj=new Object();
+        // 2.加上构造函数里有的属性 
+            conFn.call(obj,name,age);
+            obj.__proto__=conFn.prototype;
+        // 3.得到原型上的方法或属性
+          
+            // obj.name=
+              return obj;
+        }
+        var bh=objectFactory(Otaku,"大佬",99);
+        console.log(bh);
+    
+    </script>
+</body>
+</html>

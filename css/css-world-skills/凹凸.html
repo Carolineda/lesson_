@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>画图</title>
+    <style>
+    .ao{
+        width: 0;
+    }
+    .ao::before{
+        /* 画出凹凸 中文换行  英文不换行 内容 */
+        content: 'lovedog 大黄爱呀 lovedog';
+        outline: 2px solid rgb(245, 118, 118);
+        color: aliceblue;
+
+    }
+    .tu{
+        width: 0;
+        margin-top: 10px;
+    }
+    .tu::after{
+        content: '大yoyo你';
+        outline: 2px solid rgb(245, 118, 118);
+        color: aliceblue;
+        /* margin-top: 10px; */
+    }
+    </style>
+</head>
+<body>
+    <div class="ao"></div>
+    <div class="tu"></div>
+</body>
+</html>

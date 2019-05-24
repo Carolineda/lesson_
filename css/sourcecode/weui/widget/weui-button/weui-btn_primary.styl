@@ -1,0 +1,11 @@
+@import "../../base/fn"
+
+.weui-btn_primary
+    background-color $weuiBtnPrimaryBg
+    &:not(.weui-btn_disablled):visited
+        color $weuiBtnFontColor
+    // 定义按钮伪状态 &选择上一级选择器
+    &:not(.weui-btn_disabled):active
+        color $weuiBtnActiveFontColor
+        background-color $weuiBtnPrimaryActiveBg
+

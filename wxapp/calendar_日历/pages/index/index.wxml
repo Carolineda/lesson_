@@ -1,0 +1,5 @@
+<!--pages/index/index.wxml-->
+<!-- 组件引入  自定义绑定方法-->
+<Calendar id="Calendar" bind:select="select">
+
+</Calendar>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html,body{
+        height: 100%;
+    }
+    /* body
+    {
+        background-color: rgb(239, 241, 204);
+    } */
+    /* 竖着屏幕 换成其他颜色 */
+    /* @media screen and (orientation:portrait)
+    {
+        body{
+            background-color: rgb(245, 213, 155);
+        }
+    }
+    /* 横屏 */
+    /* @media screen and (orientation:landscape)
+    {
+        body{
+            background-color: rgb(223, 238, 157);
+        }
+        
+    }  */
+    body{
+        /* 渐变 */
+        background: linear-gradient(to bottom,#918383 0%,#85e49a 100%);
+    }
+    .filter{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #cde6e3;
+        animation: colorChange 10s ease-in-out infinite;
+        /* 默认返回最初状态
+         */
+         animation-fill-mode: both;
+         /* d叠加 */
+         mix-blend-mode: overlay;
+    }
+    .landscape
+    {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('http://www.jq22.com/css/img/xkbg.png');
+        background-size: 1000px 250px;
+        background-repeat: repeat-x;
+        background-position: center bottom;
+
+    }
+    @keyframes colorChange
+    {
+        0%,100%{
+            opacity: 0;
+        }
+        50%{
+            opacity: .9;
+        }
+    }
+    </style>
+</head>
+<body>
+        <div class="landscape"></div>
+        <div class="filter"></div>
+        <canvas id="canvas"></canvas>
+    <script src="./round_item.js"></script>
+    <script>
+    let canvas=document.getElementById('canvas'),
+    // 绘制2d画板  进行绘画
+    ctx=canvas.getContext('2d'),
+    initRoundPopulation = 80;   //星
+        round=[];
+
+
+    // 拿到html标签  定义常量大写 不变
+    const WIDTH=document.documentElement.clientWidth,
+     HEIGHT=document.documentElement.clientHeight;
+
+    canvas.width=WIDTH;
+    canvas.height=HEIGHT;
+
+
+    init();
+    animate();
+    function init(){
+        for(let i=0;i<initRoundPopulation;i++){
+            // 绘制星星 i:第几颗星  所在位置
+            // 业务代码和封装之间的交界线  RoundItem类 可以为任何ctx服务
+            round[i] =new RoundItem(i,Math.random()*WIDTH,Math.random()*HEIGHT,ctx);
+            round[i] .draw();
+
+        }
+    }
+    function animate(){
+        // 清除某一块画布
+        ctx.clearRect(0,0,WIDTH,HEIGHT);
+        for(let star of round){
+            star.move();
+        }
+        // 实现一秒刷帧数  重新绘画
+        requestAnimationFrame(animate);
+    }
+    </script>
+</body>
+</html>

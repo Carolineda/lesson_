@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tbody id="tbody">
+            <!-- <tr>
+                <td>name</td>
+                <td>age</td>
+            </tr> -->
+       
+        </tbody>
+    </table>
+    <script>
+    const tbody=document.getElementById('tbody');
+    const person={
+        name:'大黄',
+        age:8,
+        sex:'f',
+        keywords:['sing','game']
+    }
+
+    const people=[
+        {
+            name:'苏大强',age:60
+        },
+        {
+            name:'蔡根花',age:50
+        }
+    ]
+  const arrHtml= people.map(function(person){
+            return `
+            <tr>
+                    <td>${person.name}</td>
+                    <td>${person.age}</td>
+                </tr>
+              `
+        })
+        const htmlcontent=arrHtml.join('');
+        tbody.innerHTML=htmlcontent;
+    console.log(arrHtml);
+    // <tr>
+    //             <td>name</td>
+    //             <td>age</td>
+    //         </tr>
+    // let str= '<tr><td>'+
+    // person.name+'</td><td>'+
+    // person.age+'</td></tr>';
+    function renderKeywords(arr){
+      return  arr.map(keyword =>{
+            return `<li>${keyword}</li>`
+        })
+        // 用空字符串拼接字符串
+        .join('');
+    }
+    // let str=`  <tr>
+    //             <td>${person.name}</td>
+    //             <td>${person.age}</td>
+    //             <td>${person.sex==='f'?'男':'女'}</td>
+    //             <td>${renderKeywords(person.keywords)}</td>
+    //             <td>${100 + 100 }</td>
+    //             <td>${'学习'+'模板字符串 '}</td>
+    //             <td>\`${'`'}</td>
+    //             </tr>`;
+    tbody.innerHTML=str;
+    </script>
+</body>
+</html>

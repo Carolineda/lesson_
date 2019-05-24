@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性选择器</title>
+    <style>
+        /* 完全匹配 */
+    /* [class="list-2-item"]{
+        color: aquamarine;
+    } */
+
+    /* 选中全部 list */
+    /* li[class^="list"]{
+        color: aquamarine;
+    } */
+    /*  */
+    li[class$="2-item"]{
+        color: aquamarine;
+    }
+    
+    </style>
+</head>
+<body>
+    <li class="list-1-item">one</li>
+    <li class="list-2-item">two</li>
+    <li class="list-3-item">three</li>
+    <p class="four">four</p>
+
+</body>
+</html>

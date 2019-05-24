@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>扩展运算符</title>
+</head>
+<body>
+    <script>
+        // 扩展运算符，好比rest参数的逆运算，将数组打散
+    const arr=[6,8,9];
+    console.log(...arr);
+        console.log([...arr]);
+
+    const arr1=[2,1,3]
+    const arr2=[4,8,6]
+// 数组拼接
+    const newArr=arr1.concat(arr2);
+    const newArr_spread=[...arr1,...arr2];
+    // arr1.push(3,4,5)
+    arr1.push(...arr2);
+        const a=[20,16,8,32];
+        const min_a=Math.min(20,16,8,32);
+        console.log(min_a);
+
+        function sum(...args)
+        {
+            // return 'sum'
+            // var b=Math.a;
+            let sum=0;
+          for(let i=0;i<args.length;i++)
+          {
+              sum+=args[i];
+          }
+          return sum;
+        }
+      const s=  sum(...a);
+      console.log('sum:'+s);
+    </script>
+</body>
+</html>

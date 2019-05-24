@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>司徒正美</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+    // 浏览器的渲染机制
+    function jQueryEle(ele){
+        // 构造函数
+        this.ele=ele;
+    }
+    jQueryEle.prototype.html=function(str){
+        this.ele.innerHTML=str;
+    }
+
+
+    // json 对象  命名空间 框架名字为Jquery
+    const jQuery={};
+    jQuery.wrapper=function(ele){
+        // 将ele对象封装 
+        // jquery 里的节点对象，不是简单的html节点 而是一个jQuery对象
+        const jqueryEle=new jQueryEle(ele);
+        return jqueryEle;
+
+    }
+
+
+    function $(selector)
+    {
+        if(typeof selector ==='function'){
+            document.addEventListener('DOMContentLoaded',selector);
+        }else if(typeof selector === 'string'){
+            // ?html()
+            // 实现$('#root').html('')
+        //    $()函数 运行结果 返回的类型 调用原型链prototype方法  ele上有html()
+        const ele=document.querySelector(selector);
+        if(ele)
+        {
+            // 实例化把ele作为节点作为参数传入
+            // 
+            return jQuery.wrapper(ele);
+        }
+        }
+        
+    }
+
+
+    $(function(){
+        console.log('DOM Ready');
+       
+        $('#root').html('<p>云南</p>');
+    })
+    </script>
+</body>
+</html>

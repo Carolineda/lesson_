@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>array</title>
+</head>
+<body>
+    <script>
+    const arr=[21,18,19,26,22];
+    // 找到符合条件的第一个数  找不到返回undefined
+   const this_age= arr.find(function(age)
+    {
+        return age>18;
+    })
+
+    // 过滤 输出全部符合条件的数
+   const this_ages =arr.filter(function(age){
+        return age>18;
+    })
+
+   // every返回布尔值  判断满足的所有条件
+    const this_every=arr.every(age=>age>=18);
+
+    // 其中一项满足 
+    const this_some=arr.some(age=>age<18);
+    </script>
+</body>
+</html>

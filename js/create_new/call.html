@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>  
+    // 为做实例化对象  另外的方式的运行 this指向谁
+    function Otaku(name,age)
+    {
+      
+        this.name=name;
+        this.age=age;
+
+    }
+    var obj=new Object();
+    Otaku.call(obj,"小蒙",15);
+    </script>
+</body>
+</html>

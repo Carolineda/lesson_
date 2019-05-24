@@ -1,0 +1,73 @@
+/**index.wxss**/
+.section {
+  width: 100%;
+  background-color: #e6e6e6;
+}
+
+/* searchBar style */
+
+.searchBar {
+  background: #ff6801;
+  overflow: hidden;
+}
+.search_box.tap{
+  background: rgba(255,247,231,.9);
+}
+.search_box {
+  position: relative;
+  background: #fff;
+  margin: 15rpx;
+  border-radius: 28rpx;
+}
+
+.in_search {
+  height: 55rpx;
+  line-height: 55rpx;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.search_icon {
+  position: absolute;
+  top: 12rpx;
+  left: 270rpx;
+}
+/* navBar */
+.section-navBar-first, .section-navBar-second {
+  position: relative;
+  display: flex;
+  height: 160rpx;
+  align-items: center;
+  background-color: #fff;
+}
+.navBar-items{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+.navBar-img {
+  height: 150rpx;
+  width: 150rpx;
+}
+
+/* 人气推荐 */
+.recommend
+{
+  
+  background-color: #e6e6e6;
+  width: 680rpx;
+  text-align: center
+}
+.recommend-title{
+  
+  background-color: #fff;
+  height: 80rpx;
+  text-align: center
+}
+.in-recommend
+{
+  color:#666666;
+ 
+}

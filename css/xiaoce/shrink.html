@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    html,body
+    {
+        margin: 0;padding: 0;
+    }
+    #content
+    {
+        display: flex;
+        width: 500px;
+    }
+    #content div{
+        flex-basis: 120px;
+        border: 1.5px solid rgb(184, 187, 187)
+    }
+    .box
+    {
+        flex-shrink: 0;
+
+    }
+    .box1
+    {
+        flex-shrink: 2;
+    }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="box" style="background-color: bisque">A</div>
+        <div class="box" style="background-color: rgb(229, 213, 194)">B</div>
+        <div class="box" style="background-color: rgb(208, 226, 191)">C</div>
+        <div class="box1" style="background-color: rgb(191, 222, 224)">D</div>
+        <div class="box1" style="background-color: rgb(240, 212, 243)">E</div>
+    </div>
+</body>
+</html>

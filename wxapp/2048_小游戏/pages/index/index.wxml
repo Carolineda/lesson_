@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="game-body">
+    <view class="heading">
+      <text class="title">2048-小游戏</text>
+      <view class="scores-container">
+        <!-- 当前成绩 -->
+        <view class="score-container">{{ score }}</view>
+        <!-- 最高成绩 -->
+        <view class="best-container">{{heighscore}}</view>
+      </view>
+    </view>
+
+<!-- 网格绘制 -->
+    <view class="game-container">
+      <view class="grid-container">
+        <!-- grids 循环一次 重命名row 二维数组
+        [
+        [{value:2},null,null],
+        [null,null],
+        [null,null]
+        ]
+        重命名不需要加{{}}  {{}}变量
+        -->
+        <view class="grid-row" wx:for="{{grids}}" wx:key=" rowIndex" 
+        wx:for-index="rowIndex"
+        wx:for-item="row"
+        >
+      <view class="grid-cell" wx:for="{{row}}" wx:key="colIndex" 
+        wx:for-index="colIndex"
+        wx:for-item="cell"
+      >
+      <view class="tile">
+        <view class="tile-inner">
+          {{ cell.value }}
+        </view>
+      </view>
+      </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
