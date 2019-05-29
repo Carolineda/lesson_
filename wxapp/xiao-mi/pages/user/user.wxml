@@ -16,8 +16,8 @@
            <text>小米精品推荐(内测)</text>
         </view>
             <view  class="address-list">
-            </view>
-    </view>
+  </view>
+</view>
     <view class="orders-box">
         <view class="orders">
         我的订单</view>

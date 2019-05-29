@@ -28,7 +28,7 @@
                   <text>专题</text>{{item.text}}
                </view>
             </navigator>
-         </view>
+         </view> 
       </block>
    </view>
    <!-- end subjects -->
