@@ -1,1 +1,58 @@
 /* pages/cart/cart.wxss */
+Page, .container{
+    height: 100%;
+    
+}
+.container{
+    background-color: #ececec;
+    margin: 0;
+    width: 100%;
+}
+.cart-null
+{
+  width: 100%;
+
+}
+.cart-img{
+   
+    background-color: #d4d4d4;
+    width: 200rpx;
+    height: 200rpx;
+    line-height: 200rpx;
+    text-align: center;
+    border-radius: 100rpx;
+    margin-left: 280rpx;
+    margin-top:20px ;
+    
+
+}
+.cart-img image{
+    width: 100rpx;
+    height: 100rpx;
+    line-height: 50rpx;
+    text-align: center;
+    border-radius: 100rpx;
+    vertical-align: middle;
+    
+}
+.cart-text{
+    margin-top: 25px;
+    text-align: center
+}
+
+.btn
+{
+  background-color: #ff6700;
+  text-align: center;
+  width: 300px;
+  line-height: 100rpx;
+  border-radius: 5rpx;
+  color: white;
+  margin-left: 40px;
+  margin-top: 50px;
+}
+
+
+
+
+

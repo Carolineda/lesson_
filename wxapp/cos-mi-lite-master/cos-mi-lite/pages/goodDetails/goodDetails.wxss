@@ -8,7 +8,7 @@
    box-sizing: border-box;
 }
 
-.section {
+.section { 
    width: 100%;
    background-color: #fff;
    box-sizing: border-box;

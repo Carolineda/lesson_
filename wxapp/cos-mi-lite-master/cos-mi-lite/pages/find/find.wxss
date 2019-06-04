@@ -19,7 +19,7 @@
 .navBar_item_img{
    text-align: center;
 }
-.navBar_item image{
+.navBar_item image{ 
    width: 55rpx;
 }
 .navBar_item_text{

@@ -9,7 +9,7 @@ Page({
      result_list_hidden: true,
      tages_hidden: false,
      inputVal: ""
-  },
+  }, 
    getList(attr) {
       return dataList.section.filter(item => {
          return item.name.toString().toLowerCase().indexOf(attr) > -1;

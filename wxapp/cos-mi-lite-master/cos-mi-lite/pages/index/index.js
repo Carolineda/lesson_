@@ -17,7 +17,8 @@ Page({
      ],
      goods_list_data:[
         { 
-           id:"1",
+           id:"1", 
+
            url:"//i8.mifile.cn/v1/a1/c78bedc1-462e-b537-7c12-ee81f42b6e80!720x440.webp",
            section:[
               {
@@ -355,6 +356,7 @@ Page({
       })
    },
    toDetails: function(e){
+     console.log(e);
       const id = e.currentTarget.dataset.id;
       wx.navigateTo({
          url: `../goodDetails/goodDetails?id=${id}`

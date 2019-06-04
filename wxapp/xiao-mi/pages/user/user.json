@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "usercomp":"../../component/usercomp/usercomp"
+  }
 }

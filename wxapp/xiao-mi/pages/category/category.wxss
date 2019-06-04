@@ -33,7 +33,7 @@ Page, .container{
   }
 .category-right {
     float: right;
-    width: 800rpx;
+    width: 900rpx;
     height: 100%;
     overflow: hidden;
   }

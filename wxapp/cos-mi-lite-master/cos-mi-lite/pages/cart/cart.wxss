@@ -29,7 +29,7 @@
 }
 .cart_have_item{
    display: flex;
-   align-items: center;
+   /* align-items: center; */
    padding: 0 30rpx 0 25rpx;
    height: 90rpx;
    font-size: 25rpx;

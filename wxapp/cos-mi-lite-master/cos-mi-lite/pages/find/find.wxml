@@ -12,7 +12,7 @@
                <text>{{item.text}}</text>
             </view>
          </navigator>
-      </block>
+      </block> 
    </view>
    <!-- end navBar -->
 
@@ -29,7 +29,8 @@
                </view>
             </navigator>
          </view> 
-      </block>
+          </block>
    </view>
    <!-- end subjects -->
+  
 </view>

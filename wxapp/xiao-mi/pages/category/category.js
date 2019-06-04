@@ -11,8 +11,9 @@ switchTab(e)
     console.log(e);
     let that = this
     that.setData({
-        toView: e.target.dataset.id,
-        curNav:e.target.dataset.index
+        
+        curNav:e.target.dataset.index,
+        toView: e.target.dataset.id
     })
 },
 
@@ -20,6 +21,8 @@ switchScroll(e)
 {
     console.log(e);
     
-}
+},
+
 
 })
+

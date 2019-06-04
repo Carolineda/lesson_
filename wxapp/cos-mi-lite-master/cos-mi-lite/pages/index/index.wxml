@@ -47,16 +47,16 @@
    <view class='section goods_lists'>
       <block wx:for='{{goods_list_data}}' wx:key="{{item.id}}">
          <view class="divider_line"></view>
-         <view class="goods_lists_img">
-         <image  src='{{item.url}}' style='width:100%' mode='widthFix'></image>
-         </view>
+          <view class="goods_lists_img">
+            <image  src='{{item.url}}' style='width:100%' mode='widthFix'></image> 
+            </view>
          <view class='section part_lists'>
             <block wx:for='{{item.section}}' wx:key="index" wx:for-item="product">
                <view class="part_item" data-id="{{product.id}}" bindtap='toDetails'>
                   <view class='img'>
                      <image class="{{product.is_new?'new':''}}" src='{{product.url}}' mode='widthFix'></image>
                      <image class="img_discount" wx:if="{{product.hasDiscount}}" src='{{product.discountUrl}}' mode='aspectFill'></image>
-                  </view>
+                  </view> 
                   <view class='info'>
                      <text>{{product.name}}</text>
                      <text>{{product.brief}}</text>

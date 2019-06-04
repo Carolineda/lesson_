@@ -26,7 +26,8 @@ Page({
          subjectUrl:'',
          subjectSrc:'../../images/findSO.jpg',
          text:'你所向往的智慧生活，小米为你实现'
-      },{
+      },
+      {
          subjectUrl: '',
          subjectSrc: '../../images/findST.jpg',
          text: '小米13款产品 荣获 2018 if设计奖'

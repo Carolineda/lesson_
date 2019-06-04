@@ -72,7 +72,7 @@ export default {
                   choose: "金色",
                   src: "//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/456bfe46017c325925983fdc52d5d943.jpg"
                },
-               {
+               { 
                   choose: "深灰",
                   src: "//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/295bcfc6a55be1ab15080cd4e66c6de9.jpg"
                },

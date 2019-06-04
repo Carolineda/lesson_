@@ -11,7 +11,7 @@
                <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
                   <icon type="clear" size="14"></icon>
                </view>
-            </view>
+            </view> 
          </view>
          <view class="weui-search-bar__cancel-btn" bindtap="toSearch">搜索</view>
       </view>
