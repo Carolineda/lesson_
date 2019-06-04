@@ -98,9 +98,9 @@
 
   <!-- 底部按钮 -->
    <view class="section footer">
-      <view class="footer_cart" bindtap='toCart'>
+      <view class="footer_cart" >
          <text wx:if="{{cat_allGood_num>0}}">{{cat_allGood_num}}</text>
-         <image src='../../images/cart.png' mode='widthFix'></image>
+         <image src='../../images/cartselect.png' mode='widthFix' bindtap='toCart'></image>
       </view>
       <view class="add_cart" data-id="{{goodData.id}}" bindtap='chooseVersion'>加入购物车</view>
       <view class="add_cart_now">立即购买</view>

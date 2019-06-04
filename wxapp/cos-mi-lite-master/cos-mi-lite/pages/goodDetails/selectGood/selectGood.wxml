@@ -14,7 +14,7 @@
                <text wx:if="{{goodData.defaultData.price.length>1}}">{{priceOld}}</text>
             </view>
          </view>
-      </view>
+      </view> 
       <view class='sales'>
          <view>促销</view>
          <view class='sales_info'>

@@ -22,8 +22,6 @@ Page({
     interval:3000,
     duration:800,
     navbarHidden:false
-    
- 
   },
   detailsActive: function(){
     this.setData({
@@ -42,13 +40,17 @@ Page({
 
     })
 
-
+ },
+ toCart:function(e){
+   console.log(e)
+   wx.switchTab({
+     url: '../cart/cart',
+   })
  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
 
   },
 

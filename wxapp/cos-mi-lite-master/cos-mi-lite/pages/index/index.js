@@ -356,7 +356,7 @@ Page({
       })
    },
    toDetails: function(e){
-     console.log(e);
+     console.log(e); 
       const id = e.currentTarget.dataset.id;
       wx.navigateTo({
          url: `../goodDetails/goodDetails?id=${id}`

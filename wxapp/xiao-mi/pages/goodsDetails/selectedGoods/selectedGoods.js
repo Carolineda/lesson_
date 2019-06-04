@@ -22,42 +22,7 @@ Page({
   onReady: function () {
 
   },
-  minusNum:function(){
-    let selectNum = this.data.selectNum;
-    selectNum--;
-    if (selectNum < 2) {
-       this.setData({
-          sAble: true,
-          selectNum: 1
-       });
-       wx.setStorageSync('selectNum', this.data.selectNum);
-       return;
-    }
-    this.setData({
-       aAble: false,
-       sAble: false,
-       selectNum: selectNum
-    });
-    wx.setStorageSync('selectNum', this.data.selectNum);
-  },
-  addNuum:function(){
-    let selectNum = this.data.selectNum;
-    selectNum++;
-    if (selectNum > 9) {
-       this.setData({
-          aAble: true,
-          selectNum: 10
-       });
-       wx.setStorageSync('selectNum', this.data.selectNum);
-       return;
-    }
-    this.setData({
-       sAble: false,
-       aAble: false,
-       selectNum: selectNum
-    });
-    wx.setStorageSync('selectNum', this.data.selectNum);
-  },
+ 
 
   /**
    * 生命周期函数--监听页面显示

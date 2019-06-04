@@ -46,7 +46,7 @@
    <!-- 首页商品列表板块 -->
    <view class='section goods_lists'>
       <block wx:for='{{goods_list_data}}' wx:key="{{item.id}}">
-         <view class="divider_line"></view>
+         <view class="divider_line"></view> 
           <view class="goods_lists_img">
             <image  src='{{item.url}}' style='width:100%' mode='widthFix'></image> 
             </view>

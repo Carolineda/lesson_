@@ -12,7 +12,7 @@ Page({
       cIndex: "",
       imgSrc: "",
       memory: "",
-      color: "",
+      color: "", 
       price: "",
       priceOld: "",
       selectNum: "1",
