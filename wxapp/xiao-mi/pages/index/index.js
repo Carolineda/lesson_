@@ -128,9 +128,12 @@ Page({
  })
  },
  toShop:function(e){
+  let that = this 
    console.log(e)
+   const index = e.currentTarget.dataset.index
+   
    wx.navigateTo({
-     url:"../goodsDetails/goodsDetails"
+     url:'../goodsDetails/goodsDetails?id'+ that.data.recommand[index].id
    })
  }
 

@@ -9,7 +9,7 @@ Page({
         { imgurl: "../../images/banner4.jpg", idnum: "lb4"}
      ],
      navdata:[
-        { url:'../../images/phone.png',word: '手机'},
+        { url:'../../images/phone.png',word: '手机'}, 
         { url: '../../images/tv.png', word: '电视'},
         { url: '../../images/pc.png', word: '电脑'},
         { url: '../../images/intelligent.png', word: '智能'},

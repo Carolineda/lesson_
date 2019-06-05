@@ -2,7 +2,7 @@
 <!--pages/goodDetails/selectGood/selectGood.wxml-->
 <view class="page">
 
-   <!-- 小图 及 品名 -->
+  
    <view class='section info_head'>
       <view class='img_name_price'>
          <view class='img'>

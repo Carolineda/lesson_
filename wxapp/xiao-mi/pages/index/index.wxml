@@ -49,9 +49,9 @@
     </view>
   </view>
   <!-- 推荐商品 -->
-  <view class="items-box">
-    <block wx:for="{{recommand}}" wx:key="{{index}}" >
-      <view class="items-part" bindtap="toShop" id="{{item.id}}">
+  <view class="items-box" >
+    <block wx:for="{{recommand}}" wx:key="{{item.id}}">
+      <view class="items-part" bindtap="toShop" data-id="{{item.id}}" data-index="{{index}}">
         <view class="item-img">
           <image class="items-img" src="{{item.img}}"  />
         </view>

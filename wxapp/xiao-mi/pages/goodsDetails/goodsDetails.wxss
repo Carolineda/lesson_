@@ -25,7 +25,7 @@ color: rgba(0,0,0,0.54);
 
 }
 
-.detail .price .now-price
+.detail .price .now_price
 {
 color: #ff6801;
 font-size: 16px;

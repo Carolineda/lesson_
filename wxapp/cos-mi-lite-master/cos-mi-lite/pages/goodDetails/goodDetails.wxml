@@ -5,7 +5,7 @@
    <view class="section swiper_view">
       <swiper indicator-dots="true" autoplay="true" circular="true" style='height:825rpx'>
          <block wx:for='{{goodData.swiper_img}}' wx:key="*this">
-            <swiper-item>n
+            <swiper-item>
                <image src='{{item}}' mode="widthFix" style='width:100%'></image>
             </swiper-item>
          </block>

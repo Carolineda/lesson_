@@ -1,5 +1,6 @@
 export default {
-   data: [{
+   data: [
+     {
          id: "11",
          name: "小米8 SE",
          swiper_img: [
@@ -103,6 +104,7 @@ export default {
             "//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/7dc7500024a658c7378a6d45aca16203.jpg?w=1080&h=1492&bg=FFFFFF"
          ]
       },
+      
       {
          id: "12",
          name: "红米Note 5",

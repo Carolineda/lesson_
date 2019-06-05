@@ -1,40 +1,42 @@
 // pages/goodsDetails/goodsDetails.js
+import goodsDataList from '../../utils/goodsDataList'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls:[
-      'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/4ceb8e65e128cc6b22a95eb06b3a65d3.jpg',
-      'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/730127e7c223263bf4f6020cd5f97068.jpg'
-    ],
-    details_img:[
-      'https://i8.mifile.cn/b2c-mimall-media/d0213f3c8d64eaefa901d76db1d0cdc0.jpg',
-      'https://i8.mifile.cn/b2c-mimall-media/6937eec894107ec26291c452447cab85.jpg',
-      'https://i8.mifile.cn/b2c-mimall-media/a32780f6c3cecc993968a76eba9ba5e8.jpg'
-    ],
-    param_img:[
-      'https://i8.mifile.cn/b2c-mimall-media/60af0f1d080eb236b63c343c502ca6b5.jpg'
+    // imgUrls:[
+    //   'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/4ceb8e65e128cc6b22a95eb06b3a65d3.jpg',
+    //   'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/730127e7c223263bf4f6020cd5f97068.jpg'
+    // ],
+    // details_img:[
+    //   'https://i8.mifile.cn/b2c-mimall-media/d0213f3c8d64eaefa901d76db1d0cdc0.jpg',
+    //   'https://i8.mifile.cn/b2c-mimall-media/6937eec894107ec26291c452447cab85.jpg',
+    //   'https://i8.mifile.cn/b2c-mimall-media/a32780f6c3cecc993968a76eba9ba5e8.jpg'
+    // ],
+    // param_img:[
+    //   'https://i8.mifile.cn/b2c-mimall-media/60af0f1d080eb236b63c343c502ca6b5.jpg'
       
-    ],
+    // ],
 
     interval:3000,
     duration:800,
-    navbarHidden:false
+    navbarHidden:false,
+    goodsDataList:goodsDataList
   },
   detailsActive: function(){
     this.setData({
        navbarHidden: false
     })
  }, 
- paramActive: function(){
+ paramActive: function(){ 
     this.setData({
        navbarHidden: true
     })
  },
 
- chooseVersion:function(){
+ addCart:function(){
     wx.navigateTo({
       url:'../goodsDetails/selectedGoods/selectedGoods'
 
@@ -51,6 +53,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const id = options.id;
+      let that  = this;
+      console.log(options)
+      that.setData({
+        
+      })
+
 
   },
 
