@@ -1,56 +1,51 @@
 <template>
-  <div class="header">
-    <div class="logo">后台管理系统</div>
-    <div class="user-info">
+  <div class='header'>
+    <div class='logo'>后台管理系统</div>
+    <div class='user-info'>
       <el-dropdown @command="handleCommand">
-        <span class="el-dropdown-link">
-          {{userName}}
-          <i class="el-icon-arrow-down el-icon--right"></i>
+        <span class='el-dropdown-link'>
+          {{ userName }}
+          <i class='el-icon-arrow-down el-icon--right'></i>
         </span>
-        <el-dropdown-menu slot="dropdown">
+        <el-dropdown-menu slot='dropdown'>
           <el-dropdown-item command="loginout">退出</el-dropdown-item>
-          <el-dropdown-item command="setting">设置</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
   </div>
 </template>
 
-
 <script>
 export default {
-  name: "Header",
-  data() {
-    return {};
+  name: 'Header',
+  data () {
+    return {}
   },
   computed: {
-    userName() {
-      return localStorage.getItem("userName");
+    userName () {
+      return localStorage.getItem('userName')
     }
   },
-  methods:{
-    handleCommand(command)
-    {
-      if(command === 'loginout')
-      {
+  methods: {
+    handleCommand (command) {
+      if (command === 'loginout') {
         this.$router.push('/')
       }
-
     }
   }
-};
+}
 </script>
 
 <style scoped>
 .header {
   background-color: #409eff;
-  position: relative;
+  position: absolute;
   box-sizing: border-box;
   width: 100%;
   height: 70px;
   font-size: 22px;
   line-height: 70px;
-  color: aliceblue;
+  color: #fff;
 }
 .logo {
   float: left;
@@ -72,4 +67,3 @@ export default {
   vertical-align: middle;
 }
 </style>
-style>

@@ -1,20 +1,19 @@
 <template>
-   <div class="main-Content">
-     <Header></Header>
-   </div>
+<div class="main-content">
+    <Header></Header>
+</div>
 </template>
-
 <script>
- import Header from "./common/Header.vue"
+import Header from "./common/header"
 export default {
-  name:'mainContent',
-  data(){
-    return{
-      mgs:'hello world'
+    name:'mainContent',
+    data(){
+        return {
+            msg:'hello world'
+        }
+    },
+    components:{
+        Header
     }
-  },
-  components:{
-    Header
-  }
 }
 </script>

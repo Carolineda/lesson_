@@ -111,22 +111,24 @@
   <!-- 图片轮播 -->
   <view class="swiper-box">
     <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true" style='height:825rpx'>
-      <block wx:for="{{goodsDataList}}" wx:key="{{item.id}}"  style="heigh:{{heigh}}">
+     <block>
+     <!-- <block wx:for="{{goodsDataList}}" wx:key="{{item.id}}"  style="heigh:{{heigh}}"> -->
         <swiper-item>
-          <image src="{{item.imgUrls}}" class="slide-image" mode="widthFix" style='width:100%' />
+          <image src="{{imgUrls}}" class="slide-image" mode="widthFix" style='width:100%' />
         </swiper-item>
       </block>
     </swiper>
   </view>
   <!-- 商品信息 -->
   <view class="detail">
-    <block wx:for="{{goodsDataList}}"  wx:key="{{item.id}}" >
-    <view class="name">{{item.name}}</view>
-    <view class="brief">招财送礼 / 足金材质 / 3D硬金工艺 / 永久珍藏</view>
+    <!-- <block wx:for="{{goodsDataList}}"  wx:key="{{item.id}}" data-id="{{item.id}}"> -->
+    <block>
+    <view class="name">{{name}}</view>
+    <view class="brief">{{brief}}</view>
     <view class="price">
       <view class="now_price">
-        {{item.now_price}}
-        <text>{{item.old_price}}</text>
+        {{now_price}}
+        <text>{{old_price}}</text>
       </view>
     </view>
      </block>
@@ -153,7 +155,7 @@
     </view>
     <view class="box selected">
       <view class="title">已选</view>
-      <view class="txt-content">{{item.txt-content}}</view>
+      <view class="txt-content">{{txt_content}}</view>
       <view class="s"></view>
     </view>
     <view class="xiaomi">
@@ -187,16 +189,18 @@
     <!-- 详情图 -->
     <view class='all_info_items'>
       <view class='details_item' wx:if='{{!navbarHidden}}'>
-        <block wx:for="{{goodsDataList}}" wx:key="{{item.id}}">
+        <!-- <block wx:for="{{goodsDataList}}" wx:key="{{item.id}}"> -->
+          <block>
           <view class='details_img'>
-            <image src='{{item.details_img}}' mode='widthFix'></image>
+            <image src='{{details_img}}' mode='widthFix'></image>
           </view>
         </block>
       </view>
       <view class="param_item" wx:if="{{navbarHidden}}">
-        <block wx:for="{{goodsDataList}}" wx:key="{{item.id}}">
+        <!-- <block wx:for="{{goodsDataList}}" wx:key="{{item.id}}"> -->
+          <block>
           <view class="param_img">
-            <image src='{{item.param_img}}' mode='widthFix'></image>
+            <image src='{{param_img}}' mode='widthFix'></image>
           </view>
         </block>
       </view>

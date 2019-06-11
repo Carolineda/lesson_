@@ -27,15 +27,13 @@ export default {
   methods: {
     login () {
       if (this.user && this.password) {
-        // 登录传入的数据 
         localStorage.setItem('userName', this.user)
-        // 1.字符串  登录页面登录跳转
+        //字符串实现路由跳转
         // this.$router.push('/main')
-        // 2.对象 实现跳转
-        // this.$router.push({ path: '/main'})
-
-        // 3.编程式跳转 以路由名称跳转
-        this.$router.push({ name:'Main',params:{ userId:1}})
+        // 对象跳转
+        // this.$router.push({ path:'/main' })
+        // 编程跳转
+        this.$router.push({name: 'Main',params:{userId:1}})
       }
     }
   }
