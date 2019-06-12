@@ -1,19 +1,25 @@
 // pages/goodsDetails/selectedGoodg/selectedGoods.js
+// import goodsDataList from '../../utils/goodsDataList'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
-    selectNum:"1"
+    selectPic:'',
+    now_price:'', 
+    old_price:'',
+    txt_content:'',
+    color:'',
+    // goodsDataList:goodsDataList
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+ 
   },
 
   /**

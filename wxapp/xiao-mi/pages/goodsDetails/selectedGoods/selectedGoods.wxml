@@ -1,87 +1,53 @@
-<!--pages/goodsDetails/selectedGoodg/selectedGoods.wxml-->
-<!--pages/goodDetails/selectGood/selectGood.wxml-->
-<view class="page">
-
-  
-   <view class='section info_head'>
-      <view class='img_name_price'>
-         <view class='img'>
-            <image src='{{imgSrc}}' mode='widthFix'></image>
-         </view>
-         <view class='name_price'>
-            <view class='name'>{{goodData.name}} {{memory}} {{color}}</view>
-            <view class='price'>
-               {{price}}
-               <text wx:if="{{goodData.defaultData.price.length>1}}">{{priceOld}}</text>
-            </view>
-         </view>
+<view class="main">
+  <view class="goods">
+    <view class="goods-img">
+      <image src="{{selectPic}}" />
+    </view>
+    <view class="goods-detail">
+      <view class="goods-detail_name">{{txt_content}} {{color}}</view>
+      <view class="price">
+        <view class="now_price">{{now_price}}</view>
+        <view class="old_price">{{old_price}}</view>
+        <!-- <view class="now_price">888元</view>
+        <view class="old_price">999元</view> -->
       </view>
-      <view class='sales'>
-         <view>促销</view>
-         <view class='sales_info'>
-            <view class='sales_info_item'>
-               <text>赠品</text> 赠米粉卡，内含50元话费
-            </view>
-         </view>
+    </view>
+  </view>
+  <!-- 促销 -->
+  <view class="box discount">
+    <view class="title">促销</view>
+    <view class="discount-content">
+      <view class="one">
+        <view class="gift">赠品</view>
+        <view class="txt">增米粉金元宝足金红包  (价值99元)</view>
       </view>
-   </view>
-   <!-- end info -->
-
-   <!-- 版本 颜色 数量 及服务 -->
-   <view class='section info_footer'>
-      <view class='version'>
-         <view>版本</view>
-         <view class='choose_v'>
-            <block wx:for="{{goodData.versionData.version}}" wx:key="*this">
-               <view class='choose_v_item {{index==vIndex?".active":""}}' data-index="{{index}}" data-memory='{{item.memory}}' data-price='{{item.price}}' bindtap='chooseV'>
-                  <text>{{item.memory}}</text>
-                  <text>{{item.price[0]}}</text>
-               </view>
-            </block>
-         </view>
+      <view class="two">
+        <view class="gift">赠品</view>
+        <view class="txt">赠米粉卡，最高含100元话费  (价值100元)</view>
       </view>
-      <view class='color'>
-         <view>颜色</view>
-         <view class='choose_c'>
-            <block wx:for="{{goodData.versionData.colorImg}}" wx:key="*this">
-               <view class='choose_c_item {{index==cIndex?".active":""}}' data-index="{{index}}" data-src="{{item.src}}" data-color='{{item.choose}}' bindtap='chooseC'>{{item.choose}}</view>
-            </block>
-         </view>
+    </view>
+  </view>
+  <!-- 颜色 -->
+  <view class="middle">
+    <view class="goods-color">
+      <view class="colorTitle">颜色</view>
+      <view class="color">
+        <text>{{color}}</text>
       </view>
-      <view class='buy_num'>
-         <view>购买数量</view>
-         <view class='choose_n'>
-            <view class="iconfont icon-subtract {{sAble?'.unable':''}}" bindtap='minusNum'>-</view>
-            <view>{{selectNum}}</view>
-            <view class="iconfont icon-add {{aAble?'.unable':''}}" bindtap='addNum'>+</view>
-         </view>
+    </view>
+    <!-- 数量 -->
+    <view class="goods-num">
+      <view class="num">购买数量</view>
+    </view>
+    <view class="goods-count">
+      <view class="decreaseNum">
+        <image src="../../../images/decrease.png" />
       </view>
-      <view class='service'>
-         <view>保障服务</view>
-         <view class='choose_s'>
-            <view class='service_item'>
-               <view class='{{soHave?".active":""}}' bindtap='sOne'>意外保障服务 179.00元 </view>
-               <view>
-                  <icon type='{{soHave?"success":"circle"}}' bindtap='sOne'></icon>
-                  <text >我已阅读</text>
-                  <navigator hover-class="none">服务条款</navigator>|
-                  <navigator hover-class="none">常见问题</navigator>
-               </view>
-            </view>
-            <view class='service_item'>
-               <view class='{{stHave?".active":""}}' bindtap='sTwo'>碎屏保障服务 99.00元 </view>
-               <view>
-                  <icon type='{{stHave?"success":"circle"}}' bindtap='sTwo'></icon>
-                  <text>我已阅读</text>
-                  <navigator hover-class="none">服务条款</navigator>|
-                  <navigator hover-class="none">常见问题</navigator>
-               </view>
-            </view>
-         </view>
+      <view class="displayNum"></view>
+      <view class="addNum">
+        <image src="../../../images/add.png" />
       </view>
-   </view>
-   <!-- end info_footer -->
-
-   <view class='section but' bindtap='toAddCart'>确定</view>
-
+    </view>
+  </view>
+  <view class="footer">确定</view>
 </view>
