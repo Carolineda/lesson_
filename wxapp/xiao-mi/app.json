@@ -1,15 +1,15 @@
 {
   "pages": [
-     "pages/index/index",
+    "pages/index/index",
     "pages/goodsDetails/goodsDetails",
+    "pages/goodsDetails/selectedGoods/selectedGoods",
     "pages/index/searching/searching",
     "pages/user/user",
     "pages/cart/cart",
     "pages/find/find",
     "pages/category/category",
     "pages/logs/logs",
-    "component/usercomp/usercomp",
-    "pages/goodsDetails/selectedGoods/selectedGoods"
+    "component/usercomp/usercomp"
   ],
   "tabBar": {
     "color": "#b7b7b7",

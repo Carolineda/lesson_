@@ -38,14 +38,14 @@
     <!-- 数量 -->
     <view class="goods-num">
       <view class="num">购买数量</view>
-    </view>
-    <view class="goods-count">
-      <view class="decreaseNum">
-        <image src="../../../images/decrease.png" />
-      </view>
-      <view class="displayNum"></view>
-      <view class="addNum">
-        <image src="../../../images/add.png" />
+      <view class="goods-count">
+        <view class="decreaseNum">
+          <image src="../../../images/decrease.png" />
+        </view>
+        <view class="displayNum">{{num}}</view>
+        <view class="addNum" bindtap="add">
+          <image src="../../../images/add.png" />
+        </view>
       </view>
     </view>
   </view>

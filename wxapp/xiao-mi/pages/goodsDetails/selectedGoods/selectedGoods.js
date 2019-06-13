@@ -1,5 +1,5 @@
 // pages/goodsDetails/selectedGoodg/selectedGoods.js
-// import goodsDataList from '../../utils/goodsDataList'
+import goodsDataList from '../../../utils/goodsDataList'
 Page({
 
   /**
@@ -11,7 +11,8 @@ Page({
     old_price:'',
     txt_content:'',
     color:'',
-    // goodsDataList:goodsDataList
+    num:1,
+    goodsDataList:goodsDataList
     
   },
 
@@ -19,7 +20,35 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
- 
+    const id = options.id;
+    let that  = this;
+    console.log(options)
+    that.setData({
+      id:options.id
+
+    })   
+    that.found(id)
+  },
+  found(id){
+    let found = goodsDataList.filter (item => {
+      return item.id == id
+    })
+    console.log(found)
+    this.setData({
+      // imgUrls: found[0].imgUrls,
+      selectPic:found[0].selectPic,
+     
+      name:found[0].name,
+      now_price:found[0].now_price,
+      old_price:found[0].old_price,
+      color:found[0].color,
+      txt_content:found[0].txt_content
+
+    })
+  },
+
+  add(){
+    
   },
 
   /**

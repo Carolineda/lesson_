@@ -143,12 +143,16 @@ font-size: 28rpx;
 .goods-count
 {
   display: flex;
+  margin-left: 260rpx;
+  margin-top: 20rpx;
 }
 .decreaseNum,.addNum,.displayNum{
   border: 1rpx solid #e6e6e6;
   border-radius: 5rpx;
   width: 80rpx;
   height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
 }
 
 .decreaseNum image
@@ -160,6 +164,7 @@ font-size: 28rpx;
 {
   width: 60rpx;
   height: 60rpx;
+
 }
 
 

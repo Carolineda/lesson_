@@ -33,11 +33,13 @@ Page({
  },
 
  addCart:function(e){
-  //  console.log(e)
+  const id = e.currentTarget.dataset.id
+   console.log(e)
     wx.navigateTo({
-      url:'../goodsDetails/selectedGoods/selectedGoods'
-
+      
+      url:'../goodsDetails/selectedGoods/selectedGoods?id='+ id
     })
+    
 
  },
  toCart:function(e){
@@ -66,11 +68,12 @@ Page({
     console.log(found)
     this.setData({
       // imgUrls: found[0].imgUrls,
+      imgUrls:found[0].imgUrls,
       brief:found[0].brief,
       name:found[0].name,
       now_price:found[0].now_price,
       old_price:found[0].old_price,
-      details_param:found[0].details_param,
+      details_img:found[0].details_param,
       param_img:found[0].param_img,
       txt_content:found[0].txt_content
 

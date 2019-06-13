@@ -127,6 +127,7 @@ Page({
     url:"./searching/searching"
  })
  },
+ 
  toShop:function(e){
   let that = this 
    console.log(e)

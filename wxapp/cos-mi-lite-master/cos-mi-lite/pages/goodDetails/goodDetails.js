@@ -20,7 +20,7 @@ Page({
          return item.id == id;
       });
       this.setData({
-         goodData: goodData[0]
+         goodData: goodData[0] 
       });
    },
    chooseVersion: function(e){
