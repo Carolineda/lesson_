@@ -39,15 +39,15 @@
     <view class="goods-num">
       <view class="num">购买数量</view>
       <view class="goods-count">
-        <view class="decreaseNum">
+        <view class="decreaseNum" bindtap="decrease" data-index="{{index}}" >
           <image src="../../../images/decrease.png" />
         </view>
         <view class="displayNum">{{num}}</view>
-        <view class="addNum" bindtap="add">
+        <view class="addNum" bindtap="add" data-index="{{index}}">
           <image src="../../../images/add.png" />
         </view>
       </view>
     </view>
   </view>
-  <view class="footer">确定</view>
+  <view class="footer" bindtap="certain">确定</view>
 </view>

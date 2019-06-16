@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- 组件 counter -->
     <counter></counter>
     <counter-borther></counter-borther>
   </div>

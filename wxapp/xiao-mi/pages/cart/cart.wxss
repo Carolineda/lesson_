@@ -53,6 +53,38 @@ Page, .container{
 }
 
 
-
-
+/* 商品信息 */
+.carts-box{
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #fff;
+  display: flex;
+}
+.icon image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.goods-img image
+{
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+}
+.item-name text
+{
+  font-size: 26rpx;
+}
+.item-name,.price-num
+{
+  display: flex;
+  vertical-align: middle;
+}
+.num{
+  font-size: 26rpx;
+  color: #ececec
+}
+.price
+{
+  color: #ff6700
+}
 

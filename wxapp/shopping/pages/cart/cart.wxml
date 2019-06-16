@@ -1,5 +1,5 @@
 <!--pages/cart/cart.wxml-->
-<!--pages/cart/cart.wxml-->
+<!--pages/cart/cart.wxml--> 
 <view class="main">
   <view wx:if="{{hasList}}">
     <view class="cart-box">

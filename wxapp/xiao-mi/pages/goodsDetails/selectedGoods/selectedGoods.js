@@ -35,7 +35,7 @@ Page({
     })
     console.log(found)
     this.setData({
-      // imgUrls: found[0].imgUrls,
+
       selectPic:found[0].selectPic,
      
       name:found[0].name,
@@ -47,8 +47,54 @@ Page({
     })
   },
 
-  add(){
-    
+  add(e) {
+  let num = this.data.num
+    num++
+    this.setData({
+      num
+    })
+  },
+  decrease(e) {
+    let num =this.data.num
+    if(num <= 1)
+    {
+      return
+    }
+    else
+    {
+      num--
+      this.setData({
+        num
+      })
+    }
+
+  },
+
+  certain () {
+    wx.navigateBack({
+      delta: 1
+    });
+    wx.showToast({
+      title: '加入成功',
+      icon: 'success',
+      duration: 2000
+    })
+    let goods=wx.getStorageSync(
+      '商品')||[]
+
+    let obj = {
+       selectPic:this.data.selectPic,
+       color:this.data.color,
+       num:this.data.num,
+       txt_content:this.data.txt_content
+    }
+      goods.push(obj)
+      wx.setStorage({
+        key:"商品",
+        data:goods
+      })
+
+
   },
 
   /**
