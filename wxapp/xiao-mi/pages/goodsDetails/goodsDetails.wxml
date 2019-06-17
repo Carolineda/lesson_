@@ -20,8 +20,8 @@
     <view class="brief">{{brief}}</view>
     <view class="price">
       <view class="now_price">
-        {{now_price}}
-        <text>{{old_price}}</text>
+        {{now_price}}元
+        <text>{{old_price}}元</text>
       </view>
     </view>
      </block>

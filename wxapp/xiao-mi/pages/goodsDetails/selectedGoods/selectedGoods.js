@@ -25,7 +25,6 @@ Page({
     console.log(options)
     that.setData({
       id:options.id
-
     })   
     that.found(id)
   },
@@ -35,18 +34,15 @@ Page({
     })
     console.log(found)
     this.setData({
-
       selectPic:found[0].selectPic,
-     
       name:found[0].name,
       now_price:found[0].now_price,
       old_price:found[0].old_price,
       color:found[0].color,
-      txt_content:found[0].txt_content
-
+      txt_content:found[0].txt_content,
     })
   },
-
+ 
   add(e) {
   let num = this.data.num
     num++
@@ -69,7 +65,6 @@ Page({
     }
 
   },
-
   certain () {
     wx.navigateBack({
       delta: 1
@@ -81,19 +76,20 @@ Page({
     })
     let goods=wx.getStorageSync(
       '商品')||[]
-
     let obj = {
        selectPic:this.data.selectPic,
        color:this.data.color,
        num:this.data.num,
-       txt_content:this.data.txt_content
+       txt_content:this.data.txt_content,
+       now_price:this.data.now_price
     }
+    // console.log(obj)
       goods.push(obj)
       wx.setStorage({
         key:"商品",
         data:goods
       })
-
+      // wx.clearStorageSync('商品');
 
   },
 

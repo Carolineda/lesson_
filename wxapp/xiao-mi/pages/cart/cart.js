@@ -6,6 +6,10 @@ Page({
    */
   data: {
     // toShopping
+    cartNull: true,
+    goodsDetail: [],
+    totalPrice: '',
+    selectedIcon:false
   },
 
  toShopping:function(){
@@ -15,12 +19,50 @@ Page({
     });
   },
   /**
-   * 生命周期函数--监听页面加载
+   * 生命周期函数--监听页面加载 
    */
   onLoad: function (options) {
-
+    let that = this
+    let goodsDetail = wx.getStorageSync("商品") || []
+    if(goodsDetail.length != 0) {
+      console.log(goodsDetail)
+      that.setData({
+        goodsDetail,
+        cartNull: false
+      })
+      // this.totalPrice()
+      if(!selectedIcon)
+      {
+        this.account()
+        selectedIcon:true
+      }
+      
+    } 
   },
- 
+
+  // account:function(){
+  //   let goodsDetail = this.data.goodsDetail
+  //   let sum = 0
+  //   for(let item of goodsDetail) {
+  //     sum += item.now_price * item.num
+  //   }
+  //   this.setData({
+  //     totalPrice: sum
+  //   })
+  //   // console.log(sum)
+  // },
+
+  selectedAll:function(){
+    let goodsDetail = this.data.goodsDetail
+    let sum = 0
+    for(let item of goodsDetail) {
+      sum += item.now_price * item.num
+    }
+    this.setData({
+      totalPrice: sum
+    })
+    // console.log(sum)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -32,7 +74,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
 
   /**

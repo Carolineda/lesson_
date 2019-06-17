@@ -30,7 +30,7 @@ Page({
       cart_have[index].selectedOne = !selectedOne;
       this.setData({
          cart_have: cart_have,
-      });
+      }); 
       this.getTotalPrice();
       this.selectedStatus();
       wx.setStorageSync('cart_data', cart_have);

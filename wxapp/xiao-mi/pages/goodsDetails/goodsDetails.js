@@ -44,7 +44,7 @@ Page({
  },
  toCart:function(e){
    console.log(e)
-   wx.switchTab({
+   wx.reLaunch({
      url: '../cart/cart',
    }) 
  },

@@ -12,7 +12,7 @@
    </view>
    <!-- end cart_empty -->
 
-   <!-- 有加购的 -->
+   <!-- 有加购的 --> 
    <view wx:else>
       <view class='cart_have'>
          <block wx:for="{{cart_have}}" wx:key="*this">

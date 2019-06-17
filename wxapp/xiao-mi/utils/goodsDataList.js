@@ -3,9 +3,9 @@ export default
   {
     id: "1",
     name: "米兔招财猫足金吊坠",
-    now_price: '799元',
-    old_price: '888元',
-    txt_content: '米兔招财猫足金吊坠 金色 x 1',
+    now_price: '799',
+    old_price: '888',
+    txt_content: '米兔招财猫足金吊坠',
     imgUrls: [
       'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/4ceb8e65e128cc6b22a95eb06b3a65d3.jpg',
       // 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/730127e7c223263bf4f6020cd5f97068.jpg'
@@ -28,9 +28,9 @@ export default
   {
     id: "2",
     name: "飞利浦智睿床头灯",
-    now_price: '￥269',
+    now_price: '269',
     old_price: '￥299',
-    txt_content: '飞利浦智睿床头灯 色 x 1',
+    txt_content: '飞利浦智睿床头灯',
     imgUrls: [
       'https://i8.mifile.cn/v1/a1/9472fefa-8e44-6455-6609-67fea3422a15.webp',
       'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/3fa93f3c0ca589ad82cfa6c6b7d699c2.jpg',
@@ -57,9 +57,9 @@ export default
   {
     id: "3",
     name: "8H标准乳胶枕 Z1",
-    now_price: '￥199',
+    now_price: '199',
     old_price: '',
-    txt_content: '标准乳胶枕 雅米色 x 1',
+    txt_content: '标准乳胶枕',
     imgUrls: [
       'https://i8.mifile.cn/v1/a1/8b24ab78-95f5-96cb-b50c-692f94fa2bc8.webp',
       'https://i8.mifile.cn/v1/a1/834cfb2d-c769-f263-3c91-b15245400467.webp',
@@ -87,9 +87,9 @@ export default
   {
     id: "4",
     name: "米家压力IH电饭煲",
-    now_price: '￥699',
+    now_price: '699',
     old_price: '',
-    txt_content: '电饭煲 白色 x 1',
+    txt_content: '米家电饭煲',
     imgUrls: [
       'https://i8.mifile.cn/v1/a1/64bd3118-e101-8bcf-f963-9c657909c81a.webp',
       'https://i8.mifile.cn/v1/a1/be71beeb-a618-85cc-e9e0-3eb4be8aedc1.webp',

@@ -6,8 +6,8 @@
     <view class="goods-detail">
       <view class="goods-detail_name">{{txt_content}} {{color}}</view>
       <view class="price">
-        <view class="now_price">{{now_price}}</view>
-        <view class="old_price">{{old_price}}</view>
+        <view class="now_price">{{now_price}}元</view>
+        <view class="old_price">{{old_price}}元</view>
         <!-- <view class="now_price">888元</view>
         <view class="old_price">999元</view> -->
       </view>

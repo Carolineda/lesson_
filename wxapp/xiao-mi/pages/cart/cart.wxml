@@ -2,52 +2,56 @@
 <view class="container">
   <!-- 空购物车 -->
   <view wx:if="{{cartNull}}">
-  <view class="cart-null" >
-    <view class="cart-img">
-      <image src="../../images/cartT.png" />
-    </view>
-    <view class="cart-text">
-      <text>购物车还是空的</text>
-    </view>
-    <view class="btn" bindtap="toShopping">
-      <text>到小米商城逛逛</text>
+    <view class="cart-null">
+      <view class="cart-img">
+        <image src="../../images/cartT.png" />
+      </view>
+      <view class="cart-text">
+        <text>购物车还是空的</text>
+      </view>
+      <view class="btn" bindtap="toShopping">
+        <text>到小米商城逛逛</text>
+      </view>
     </view>
   </view>
-  </view>
-
   <!-- 商品 -->
+  <view wx:else>
+    <view class="cart-goods">
+      <block wx:for="{{goodsDetail}}" wx:key="index">
+        <view class="carts-box">
+          <view class="icon">
+            <image src="./circle.png" bindtap="account" wx:if="{{selectedIcon}}" />
+          </view>
+          <view class="goods-img">
+            <image src="{{item.selectPic}}" />
+          </view>
+          <view class="item-name">
+            <text class="name">{{item.txt_content}}</text>
+          </view>
+          <view class="price-num">
+            <view class="num">{{item.num}} x</view>
+            <view class="price">{{item.now_price}}元</view>
+          </view>
+          <!-- 底部 -->
+        </view>
+      </block>
+    </view>
 
-<view wx:else>
-  <view class="cart-goods">
-    <view class="carts-box">
-      <view class="icon">
-        <image src="./circle.png"/>
-      </view>
-      <view class="goods-img">
-        <image src="https://i1.mifile.cn/a1/T1OVC_ByY_1RXrhCrK.jpg" />
-      </view>
-      <view class="item-name">
-        <text class="name">充电宝</text>
-        </view>     
-        <view class="price-num">
-      <view class="num">3 x</view>
-      <view class="price">149元</view>
 
-      <!-- 底部 -->
-      </view>
     <view class="footer">
       <view class="icon">
-        <image src="./circle.png" /> <text>全选</text>
-        <view class="sum">
-          合计：<text>{{totalPrice}}</text>
-        </view>
-        <view class="account">
-          <text>结算</text>
-        </view>
+        <image src="{{selectPic}}" bindtap="selectedAll"/>
+      </view>
+      <view class="allselected" >
+        <text>全选</text>
+      </view>
+      <view class="sum">
+        合计 ：
+        <text>{{totalPrice}}元</text>
+      </view>
+      <view class="account">
+        <text>结算</text>
       </view>
     </view>
-    </view>
-
   </view>
-</view>
 </view>
