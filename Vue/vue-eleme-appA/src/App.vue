@@ -14,7 +14,7 @@
       <router-link to="/seller">商家</router-link>
     </div>
   </div>
-    <router-view></router-view>
+    <router-view :seller="seller"></router-view>
   </div>
 </template>
 
@@ -36,6 +36,7 @@ export default {
     'v-header': header
   },
   created () {
+    // seller接口
     this.$http.get('https://www.easy-mock.com/mock/5ca2c29464930718b239eb94/lm/vue-eleme-seller')
       .then(res => {
         console.log(res)
