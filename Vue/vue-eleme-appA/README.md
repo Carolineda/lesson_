@@ -10,3 +10,6 @@
 
 ## $nextTick() 
   vue中数据更新是异步的，在dom解构没有加载完成，BScroll无法获取目标容器的高度，会出现无法滚动的现象。 $nextTick()可以解决此问题
+
+## 源码介绍  
+https://blog.csdn.net/qq_14863671/article/details/54412254

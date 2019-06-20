@@ -1,83 +1,129 @@
 <template>
-<div>
-  <div class="gradeBox">
-    <div class="rating-left">
-      <h3 class="markGrade">{{seller.score}}</h3>
-      <div class="totalGrade">综合评分</div>
-      <div class="detail">高于周边商家{{seller.rankRate}}%</div>
-    </div>
-   
-    <div class="rating-right">
-      <div class="service">
-        服务
+  <div class="rantings">
+    <div class="rantings-content">
+      <div class="overview">
+        <div class="overview-left">
+          <h1 class="score">{{seller.score}}</h1>
+          <div class="title">综合评分</div>
+          <div class="rank">高于周边商家{{seller.rankRate}}%</div>
+        </div>
+        <div class="overview-right">
+          <div class="score-wrapper">
+            <span class="title">服务态度</span>
+            <star :size="36" :score="seller.serviceScore"></star>
+            <span class="score">{{seller.serviceScore}}</span>
+          </div>
+          <div class="score-wrapper">
+            <span class="title">商品评分</span>
+            <star :size="36" :score="seller.foodScore"></star>
+            <span class="score">{{seller.foodScore}}</span>
+          </div>
+          <div class="delivery-wrapper">
+            <span class="title">送达时间</span>
+            <span class="delivery">{{seller.deliveryTime}}分钟</span>
+          </div>
+        </div>
       </div>
-      <div class="goodsGrade">商品评分</div>
-      <div class="toTime">送达时间 13</div>
+
+      <!-- <split></split> -->
     </div>
   </div>
-</div> 
-
 </template>
 
 <script>
-// import starControl from '@components/star/star'
+import star from "@/components/star/star";
+const response = require('../../common/data/rating.json')
 export default {
+  props: {
+    seller:{
+      type:Object
+    }
+  }, 
   data () {
     return {
-
+      ratings: [],
+      
     }
   },
-  created () {
-     this.$http
-      .get("https://www.easy-mock.com/mock/5d023d85f91dbf489ccf41e2/vue/goods")
+  methods: {
+    
   },
-}
+  components: {
+    star
+  }
+};
 </script>
 
-<style>
-.gradeBox
-{
-  
-  display: flex;
-  height: 100px;
-  vertical-align: middle;
-  position:flex;
-  align-items:center;
-}
-.rating-left{
- 
-  width: 40%;
-  height: 60px;
-  /* line-height: 5px; */
-  text-align: center;
+<style lang="stylus" rel="stylesheet/stylus">
+  @import "../../common/stylus/mixin"
 
-  border-right: 1px solid rgb(223, 222, 222);
-}
-.markGrade
-{
-  
-  color: rgb(233, 172, 80);
-  font-size: 18px;
-}
-.totalGrade
-{
-  font-size: 12px;
-}
-.detail{
-  font-size: 12px;
-  color: rgb(152, 154, 155)
-}
-
-.rating-right{
-  flex: 2;
-  text-align: center;
-  font-size: 12px;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-}
-
-
+  .rantings
+    position absolute
+    top 174px
+    bottom 0
+    left 0
+    width 100%
+    overflow hidden
+    .overview
+      display flex
+      padding 18px 0 
+      .overview-left
+        flex 0 0 137px
+        padding 6px 0
+        width 137px
+        border-right 1px solid rgba(7,17,27,0.1)
+        text-align center
+        @media only screen and (max-width: 320px)
+          flex 0 0 120px
+          width 120px
+        .score
+          margin-bottom 6px
+          line-height 28px
+          font-size 24px
+          color #f90
+        .title
+          margin-bottom 8px
+          line-height 12px
+          font-size 12px
+          color rgb(7,17,27)
+        .rank
+          line-height 10px
+          font-size 10px
+          color rgb(147,153,159)
+      .overview-right
+        flex 1
+        padding 6px 0 6px 24px
+        // text-align center
+        @media only screen and (max-width: 320px)
+          padding-left 6px
+        .score-wrapper
+          display flex
+          margin-bottom 8px
+          font-size 0
+          .title
+            display inline-block
+            line-height 18px
+            vertical-align top 
+            font-size 12px
+            color rgb(7,17,27)
+          .star
+            display inline-block
+            margin 0 12px
+            vertical-align top
+          .score
+            display inline-block
+            line-height 18px
+            vertical-align top 
+            font-size 12px
+            color rgb(255,153,0) 
+        .delivery-wrapper
+          font-size 0
+          .title
+            line-height 18px
+            font-size 12px
+            color rgb(7,17,27)
+          .delivery
+            margin-left 12px
+            font-size 12px
+            color rgb(147,153,159)
 </style>

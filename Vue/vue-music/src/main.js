@@ -6,6 +6,7 @@ import router from './router'
 import fastclick from 'fastclick'
 import VueLazyload from 'vue-lazyload'
 import store from './vuex/store'
+import '../static/css/reset.styl'
 
 
 // 图片加载 懒加载
@@ -21,7 +22,7 @@ fastclick.attach(document.body)
 
 Vue.config.productionTip = false
 
-import {Toast, Loading} from '@common/plugin'
+import {Toast, Loading} from '@/common/plugin'
 Vue.use(Toast)
 Vue.use(Loading)
 

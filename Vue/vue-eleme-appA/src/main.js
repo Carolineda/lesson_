@@ -14,6 +14,6 @@ Vue.prototype.$http = axios // 将axios挂载到vue的原型链上
 new Vue({ 
   el: '#app',
   router,
-  components: { App },
+  components: { App }, 
   template: '<App/>'
 })
