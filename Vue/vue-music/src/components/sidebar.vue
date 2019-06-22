@@ -10,57 +10,66 @@
       </div>
       <div class="menu">
         <ul>
-           <li>
+           <li @click="_hidebar">
             <router-link to="/user" @click="_hidebar">
               <i class="icon">&#xe63c;</i>
               <span>个人中心</span>
             </router-link>
           </li>
-           <li>
+           <li @click="_hidebar">
             <router-link to="" @click="_hidebar">
               <i class="icon">&#xe631;</i>
               <span>音效调整</span>
             </router-link>
           </li>
-           <li>
+           <li @click="_hidebar">
             <router-link to="" @click="_hidebar">
               <i class="icon">&#xe65b;</i>
               <span>定时关闭</span>
             </router-link>
           </li>
-           <li>
+           <li @click="_hidebar">
             <router-link to="" @click="_hidebar">
               <i class="icon">&#xe601;</i>
               <span>听歌识曲</span>
             </router-link>
           </li>
-           <li>
+           <li @click="_hidebar">
             <router-link to="" @click="_hidebar">
               <i class="icon">&#xe600;</i>
               <span>帮助</span>
             </router-link>
           </li>
-           <li>
+           <li @click="_hidebar">
             <router-link to="" @click="_hidebar">
               <i class="icon">&#xe61f;</i>
               <span>设置</span>
             </router-link>
           </li>
         </ul>
-      </div>
+      </div>  
     </div>
+    <div v-show="showSidebar" class="sidebar_mask" @click="_hidebar"></div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
-      showSidebar:true
     }
   },
+  computed: {
+    ...mapGetters ([
+      'showSidebar'
+    ])
+  },
   methods: {
-    _hidebar(){}
+    _hidebar(){
+      // 在vue调用vuex js方法  dispatch调用action里面的方法
+      this.$store.dispatch('setShowSidebar',false)
+    }
   },
 }
 </script>
@@ -96,6 +105,7 @@ export default {
         margin px2rem(60px) auto px2rem(15px)
         img 
           width 100%
+          // border-radius 50%
       .name 
         font-size px2rem(32px)
     .menu 
@@ -113,7 +123,7 @@ export default {
             
             span 
               vertical-align middle
-              font-size px2rem(24px)
+              font-size px2rem(32px)
               padding-left px2rem(20px)
               color #fff
   

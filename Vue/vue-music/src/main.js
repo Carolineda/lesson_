@@ -9,6 +9,7 @@ import store from './vuex/store'
 import '../static/css/reset.styl'
 
 
+
 // 图片加载 懒加载
 import def_lazy_img from '../static/img/loading.gif'
 Vue.use(VueLazyload, {

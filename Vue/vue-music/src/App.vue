@@ -7,18 +7,20 @@
       <router-link to="/user" slot="right-icon">
       <i class="icon">&#xe63c;</i>
       </router-link>
-    </v-header>
+    </v-header> 
 
-    <!-- tab导航 -->
-    <tab></tab>
+    <!-- v-tab导航 --> 
+    <v-tab></v-tab>
     <!-- 保存状态 keep-alive 点击推荐标签 保存当前浏览状态-->
     <keep-alive>
       <router-view></router-view>
     </keep-alive>
 
     <!-- play播放页面 -->
+    <v-play></v-play>
     <!-- sliderBar 左边图标-->
-      <v-sidebar></v-sidebar>
+    <v-sidebar></v-sidebar>
+    
   </div>
 </template>
 
@@ -26,12 +28,14 @@
 import header from '@/components/header'
 import tab from '@/components/tab'
 import sidebar from '@/components/sidebar'
+import play from '@/components/play'
 export default {
   name: 'App',
   components:{
     'v-header':header,
-    tab,
-    'v-sidebar':sidebar
+    'v-tab':tab,
+    'v-sidebar':sidebar,
+    'v-play':play
   }
 }
 </script>

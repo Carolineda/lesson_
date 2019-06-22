@@ -44,3 +44,5 @@
        flex 0 0 px2rem(88px)
 
     filter 滤镜 灰白
+
+import * as types from '../types' 所有抛出接收里面的方法 并且是对象 直接获取里面的方法
