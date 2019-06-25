@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import axios from 'axios'
-
+import {resolve} from 'path'
 
 // this的作用域不在vue
 const vue = new Vue()
@@ -67,6 +67,12 @@ export default {
   SongList (params)
   {
     return fetchGet('/playlist/detail',params)
+  },
+
+  // 歌曲搜索
+  MusicSearch(params)
+  {
+    return fetchGet('/search',params)
   }
 
 }

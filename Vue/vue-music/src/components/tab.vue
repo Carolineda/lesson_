@@ -13,7 +13,7 @@
       <span class="tab-link">搜索</span>
     </router-link>
   </div>
-</template>
+</template> 
  
 <script>
 export default {

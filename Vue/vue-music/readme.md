@@ -4,7 +4,7 @@
       1.项目  vue init webpack
                         运行项目      npm run dev
 
-      2.axios 用来请求接口数据   npm install axios
+      2.axios 用来请求接口数据,axios是vue全家桶官方文档的定义获取数据   npm install axios
 
       解决3000毫秒延迟 安装fastclick       npm install fastclick -S
       安装懒加载   VueLazyload            npm install vue-lazyload -D
