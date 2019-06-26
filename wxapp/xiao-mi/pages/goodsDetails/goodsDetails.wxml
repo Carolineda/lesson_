@@ -4,10 +4,10 @@
   <!-- 图片轮播 -->
   <view class="swiper-box">
     <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true" style='height:825rpx'>
-     <block>
+     <block wx:for="{{imgUrls}}" wx:key="item">
      <!-- <block wx:for="{{goodsDataList}}" wx:key="{{item.id}}"  style="heigh:{{heigh}}"> -->
         <swiper-item>
-          <image src="{{imgUrls}}" class="slide-image" mode="widthFix" style='width:100%' />
+          <image src="{{item}}" class="slide-image" mode="widthFix" style='width:100%' />
         </swiper-item>
       </block>
     </swiper>
@@ -83,9 +83,9 @@
     <view class='all_info_items'>
       <view class='details_item' wx:if='{{!navbarHidden}}'>
         <!-- <block wx:for="{{goodsDataList}}" wx:key="{{item.id}}"> -->
-          <block>
+          <block wx:for="{{details_img}}" wx:key="index">
           <view class='details_img'>
-            <image src='{{details_img}}' mode='widthFix'></image>
+            <image src='{{item}}' mode='widthFix'></image>
           </view>
         </block>
       </view>

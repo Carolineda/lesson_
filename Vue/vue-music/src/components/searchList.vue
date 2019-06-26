@@ -13,15 +13,21 @@
 
 <script>
 export default {
+  // data(){
+  //   return{
+  //     searches:''
+  //   }
+  // },
   props:{
     searches:{
       type:Array,
-      default:['周杰伦']
+      default:[]
     }
   },
   methods: {
     selectItem(){}
   },
+ 
 }
 </script>
 

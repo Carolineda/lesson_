@@ -3,7 +3,8 @@ import * as types from '../types'
 
 const state = {
   showSidebar:false,
-  fullScreen:false
+  fullScreen:false,
+  searchHistory:[123]
 }
 
 // 修改数据源的字段 必须通过mutation修改
@@ -16,7 +17,12 @@ const mutations = {
   [types.SET_FULL_SCREEN] (state,status)
   {
     state.fullScreen = status
+  },
+  [types.COM_SAVE_SEARCH_HISTORY] (state)
+  {
+    state.searchHistory=state
   }
+
 }
 
 // action 调用方法 commit提交该方法
@@ -29,13 +35,19 @@ const actions ={
   selectPlaySong ({commit},status) {
     // let playlist = state.playlist.slice()
     commit(types.SET_FULL_SCREEN,status)
+  },
+  saveSearchHistory({commit,state},query){
+    let saveSearchHistory =[query,...state.searchHistory.slice()]
+    searchHistory = [...new Set(saveSearchHistory)]
+    commit(types.COM_SAVE_SEARCH_HISTORY,searchHistory)
   }
 }
 
 // 取出state 里面的数据
 const getters = {
   showSidebar: state => state.showSidebar,
-  fullScreen: state => state.fullScreen
+  fullScreen: state => state.fullScreen,
+  searchHistory:state => state.searchHistory
 }
 
 export default {

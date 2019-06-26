@@ -7,7 +7,7 @@ Page({
    */
   data: {
     id:'',
-    imgUrls:'',
+    imgUrls:[],
     name:'',
     brief:'',
     now_price:'', 

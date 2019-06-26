@@ -73,6 +73,11 @@ export default {
   MusicSearch(params)
   {
     return fetchGet('/search',params)
-  }
+  },
+
+  // 热搜
+ HotSearchKey(){
+  return fetchGet('/search/hot')
+ }
 
 }

@@ -8,7 +8,7 @@ export default
     txt_content: '米兔招财猫足金吊坠',
     imgUrls: [
       'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/4ceb8e65e128cc6b22a95eb06b3a65d3.jpg',
-      // 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/730127e7c223263bf4f6020cd5f97068.jpg'
+      'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/730127e7c223263bf4f6020cd5f97068.jpg'
     ],
     color:'金色',
     brief: 

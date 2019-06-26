@@ -46,3 +46,13 @@
     filter 滤镜 灰白
 
 import * as types from '../types' 所有抛出接收里面的方法 并且是对象 直接获取里面的方法
+
+##下拉加载 获取数据 
+ 1.[...this.result, ...res.result.songs]  两个数据的数组拼接  
+  2.suggest的父组件search
+
+## ES6
+1.`${item.name}-${item}` es6字符串的拼接
+
+
+ - v-html :支持放置function方法，其功能也同于挖坑 放数据，展示数据
