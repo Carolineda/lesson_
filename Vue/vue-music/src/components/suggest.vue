@@ -38,8 +38,7 @@ export default {
       pullup:true,
       beforeScroll:true,
       hasMore:true,
-      result:[],
-      
+      result:[]
     }
   },
   components: {
@@ -88,6 +87,7 @@ export default {
         selectItem(item){
           this.$emit('select',item)
       },
+      // 页面滚动
         listScroll(){
           this.$emit('listScroll')
         },

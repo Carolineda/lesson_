@@ -89,6 +89,7 @@ Page({
         key:"商品",
         data:goods
       })
+      // 清除本地数据
       // wx.clearStorageSync('商品');
 
   },

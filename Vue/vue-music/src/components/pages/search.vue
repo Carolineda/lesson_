@@ -1,8 +1,8 @@
 <template>
     <div class="search">
         <div class="search-box-wrapper">
-            <!-- 搜索框 -->
-            <v-searchBox @query="onQueryChange"></v-searchBox>
+            <!-- 搜索框  onQueryChange检测用户输入的内容-->
+            <v-searchBox @query="onQueryChange" ref="searchBox"></v-searchBox>
         </div>
         <div class="shortcut-wrapper" ref="shortcutWrapper" v-show="!query">
             <v-scroll class="shortcut" ref="shortcut" :data="shortcut" :refreshDelay="refreshDelay">
@@ -30,7 +30,7 @@
                             </span>
                         </h1>
                         <!-- 搜索历史列表 -->
-                            <v-searchlist :searches="searchHistory"></v-searchlist>
+                            <v-searchlist :searches="searchHistory" @select="addQuery"></v-searchlist>
                     </div>
                 </div>
             </v-scroll>
@@ -44,63 +44,43 @@
 
 
 <script>
-import searchBox from "@/components/searchBox";
-import scroll from "@/components/scroll";
-import searchList from "@/components/searchList";
-import suggest from "@/components/suggest";
-import api from "@/api";
+import searchBox from "@/components/searchBox"
+import scroll from "@/components/scroll"
+import searchList from "@/components/searchList"
+import suggest from "@/components/suggest"
+import api from "@/api"
 import {mapGetters} from 'vuex'
+import {searchMixin} from '@/common/mixin.js'
 export default {
-  data() {
-    return {
-      query:'',
-      shortcut:[],
-      hotkey:[],
-      refreshDelay:2
-    }
-  },
-  components: {
-    'v-searchBox':searchBox,
-    'v-scroll':scroll,
-    'v-searchlist':searchList,
-    'v-suggest':suggest
-  },
-  methods: {
-    showConfirm(){},
-    onQueryChange(query)     
-    {
-      this.query=query
-    },
-    saveSearch(data){
-      console.log(data)
-      this.$store.dispatch('saveSearchHistory',data)
-    },
-    blurInput(){
-      
-    },
-    // 获取热搜
-    _getHotKey(){
-      api.HotSearchKey().then((res)=>{
-        if(res.code === 200){
-          this.hotkey = res.result.hots.slice(0,10)
+    data() {
+        return{
+            shortcut:[],
+            hotkey:[],
         }
-      })
     },
-    // saveSearchHistory(){
-    //   this.$store.dispatch('searchHistory')
-    // }
-  },
-  computed: {
-    ...mapGetters([
-      'searchHistory'
-    ])
-  },
-  created() {
-    // 生命周期调用
-    this._getHotKey()
-    
-  },
+    components:{
+        'v-searchBox': searchBox,
+        'v-scroll': scroll,
+        'v-searchlist': searchList,
+        'v-suggest':suggest
+    },
+    mixins: [searchMixin],
+    methods:{
+        showConfirm(){},
+        // 生命周期调用_getHotKey
+        _getHotKey(){
+            api.HotSearchKey().then((res) =>{
+                if (res.code === 200){
+                    this.hotkey = res.result.hots.slice(0,10)
+                }
+            })
+        },
+    },
+    created (){
+        this._getHotKey()
+    }
 }
+
 </script>
 
 <style lang="stylus" scoped>

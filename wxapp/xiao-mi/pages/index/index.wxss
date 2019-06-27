@@ -173,7 +173,7 @@ padding-left: 20rpx;
 {
  display: inline-block;
  /* padding: 0 10rpx; */
- margin-right: 5rpx;
+ /* margin-right: 5rpx; */
  margin-bottom: 5rpx;
  border: 2rpx solid #e6e6e6;
  border-radius: 30rpx;

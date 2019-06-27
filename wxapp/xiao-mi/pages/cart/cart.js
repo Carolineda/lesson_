@@ -9,7 +9,7 @@ Page({
     cartNull: true,
     goodsDetail: [],
     totalPrice: '',
-    selectedIcon:false
+    selectedIcon:true
   },
 
  toShopping:function(){

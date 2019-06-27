@@ -37,8 +37,8 @@ const actions ={
     commit(types.SET_FULL_SCREEN,status)
   },
   saveSearchHistory({commit,state},query){
-    let saveSearchHistory =[query,...state.searchHistory.slice()]
-    searchHistory = [...new Set(saveSearchHistory)]
+    let searchHistory =[query,...state.searchHistory.slice()]
+    searchHistory = [...new Set(searchHistory)]
     commit(types.COM_SAVE_SEARCH_HISTORY,searchHistory)
   }
 }

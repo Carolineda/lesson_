@@ -20,6 +20,7 @@
       <block wx:for="{{goodsDetail}}" wx:key="index">
         <view class="carts-box">
           <view class="icon">
+          <!-- <image src="./circle.png" bindtap="account" /> -->
             <image src="./circle.png" bindtap="account" wx:if="{{selectedIcon}}" />
           </view>
           <view class="goods-img">
