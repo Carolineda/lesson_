@@ -15,6 +15,7 @@
                     - npm install stylus-loader --save-dev
 
       4.安装px2rem 移动端自适应      npm install px2rem-loader --save-dev
+      5.安装歌词解析器   npm i lyric-parser
 
 
 

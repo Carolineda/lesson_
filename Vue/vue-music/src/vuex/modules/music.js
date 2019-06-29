@@ -70,7 +70,20 @@ const actions = {
     let playHistory = state.playHistory.slice()
     playHistory = [...playHistory,song]
     commit(types.SAVE_PLAY_HISTORY,playHistory)
+  },
+
+  // 保存喜欢列表
+  saveFavoriteList ({commit,state},song) {    //slice()出来的结果一定是个数组，里面没有参数则是截取所有
+    let favoriteList = state.favoriteList.slice()
+    favoriteList = [...favoriteList,song]
+    commit(types.SAVE_FAVORITE_LIST,favoriteList)
+  },
+  // 删除
+  deleteFavoriteList({commit,state},song){
+
   }
+
+
 }
 
 const getters = {

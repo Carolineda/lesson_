@@ -4,7 +4,7 @@ export const SET_FULL_SCREEN = 'SET_FULL_SCREEN'      //定义设置播放器是
 
 export const  COM_SAVE_SEARCH_HISTORY ='COM_SAVE_SEARCH_HISTORY'       //保存搜索历史                                    //定义搜索历史方法
 
-// 
+//  
 export const SET_PLAY_LIST='SET_PLAY_LIST'
 
 export const SET_CURRENT_INDEX='SET_CURRENT_INDEX'   //设置播放音乐的索引
