@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>关于call bind apply</title>
+</head>
+<body>
+  <script>
+    var a = {
+      user:'炸鸡',
+      fn:function(n,m) {
+        // console.log(this)    //b1在全局调用 window
+        console.log(this.user)   //打印undefined
+        console.log(n + m)
+      }
+    }  
+
+  // var b1 =a.fn
+  // b1.call(a, 5)  //把b作用域指向a 获取user this指向全局会转为转向a的作用域  5指向n
+
+
+  // a.fn()    //打印炸鸡  调用本身的方法
+
+  var b = a.fn
+  // b.apply(a,[1,1])
+  var c = b.bind(a)
+  c()
+  </script>
+</body>
+</html>
