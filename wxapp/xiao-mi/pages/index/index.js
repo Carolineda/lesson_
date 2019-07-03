@@ -127,7 +127,7 @@ Page({
     url:"./searching/searching"
  })
  },
- 
+//  商品页面传出的id
  toShop:function(e){
   let that = this 
    console.log(e)

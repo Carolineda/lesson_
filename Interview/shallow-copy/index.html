@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>解构</title>
+</head>
+<body>
+  <!-- js中的浅拷贝和深拷贝 -->
+  <script>
+    // Es6解构
+    function example () {
+      return [1,2,3]
+    }
+    // let b = example()[1]    //Es5写法
+    // console.log(b)
+    
+    let [a,b,c] = example()    //Es6解构
+    console.log(a)
+    let [x,y] = [1,2]    //数组解构
+
+
+  
+  // 对象解构 要对象的key值对应
+  // let {foo,bar} = {foo:"aaa",bar:"bbb"}
+
+
+  // 对象允许重新命名
+  let {foo:baz} = {foo:'abc'}
+  console.log(baz)    //foo被重新命名baz
+
+  </script>
+</body>
+</html>

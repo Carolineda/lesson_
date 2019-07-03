@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组去重</title>
+</head>
+<body>
+  <!-- 数组去重的方法 -->
+  <script>
+    //  方法一： 
+    // [1,2,3,2,3,5]  uniq 方法
+    // function uniq (arr) {
+    //   return [...new Set(arr)]
+    // }
+    // console.log(uniq([1,2,3,2,3,5]))
+
+    // 方法二：indexOf
+    // function uniq(arr) {
+    //   let result = []
+    //   for (let i=0;i<arr.length;i++){
+    //     if (result.indexOf(arr[i]) === -1)     //查找result里面数组的数和arr比较 不存在则放进result
+    //     {
+    //       result.push(arr[i])
+    //     }
+    //   }
+    //   return result
+    // }
+    // console.log(uniq([1,2,3,2,3,5]))
+
+    // 方法三：includes
+      // function uniq (arr) {
+      //   let result = []
+      //   for (let i=0;i<arr.length;i++){
+      //     if(!result.includes(arr[i])){
+      //       result.push(arr[i])
+      //     }
+      //   }
+      //   return result
+      // }
+      // console.log(uniq([1,2,3,2,3,5]))
+
+    // 方法四： 
+    // function uniq (arr){
+    //   let map = new Map()
+    //   let result = new Array()
+    //   for (let i =0;i<arr.length;i++) {
+    //     if(map.has(arr[i])) {
+    //       map.set(arr[i],true)
+    //     }else{
+    //       map.set(arr[i],false)
+    //       result.push(arr[i])
+    //     }
+    //   }
+    //   return result
+    // }
+    // console.log(uniq([1,2,3,2,3,5]))
+
+    // 方法五： reduce
+      function uniq (arr) {
+        // 数组arr里的数依次执行reduce回调函数
+        return arr.reduce((prev,cur)=>{
+        return prev.includes(cur) ? prev : [...prev,cur]   //第一个参数和第二个参数  pre包含cur的话就留下prev 反之把cur放于prev
+        },[])
+      }
+      console.log(uniq([1,2,3,2,3,5]))
+  </script>
+</body>
+</html>

@@ -22,7 +22,6 @@
     <view class="section-navBar-first">
       <navigator class="navBar-items" wx:for="{{navBar}}" wx:key="{{index}}">
         <image class="navBar-img" src="{{item.img}}" />
-        <!-- <text class='navBar-name'>{{item.name}}</text> -->
       </navigator>
     </view>
     <view class="section-navBar-second">

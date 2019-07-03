@@ -59,17 +59,15 @@ Page, .container{
   display: flex;
   border-bottom: 2rpx solid #d4d4d4;
 }
-.selectIcon{
-  
-}
+
 .cart-goods{
   position: fixed;
   top: 0;
   width: 100%;
 }
-.icon
+.icon, .goods-img,.allselected
 {
-  margin-left: 20rpx;
+  margin-left: 30rpx;
 }
 .icon image{
   width: 30rpx;
@@ -98,7 +96,7 @@ Page, .container{
 }
 .price-num
 {
-  /* margin-right: -10rpx; */
+
   position:fixed;
   right: 50rpx;
  
@@ -132,10 +130,7 @@ Page, .container{
   width: 30rpx;
   height: 30rpx;
 }
-.allselected
-{
- margin-left: 20rpx;
-}
+
 .sum
 {
 margin-left: 160rpx;

@@ -83,7 +83,7 @@ Page({
        txt_content:this.data.txt_content,
        now_price:this.data.now_price
     }
-    // console.log(obj)
+    // 本地缓存数据
       goods.push(obj)
       wx.setStorage({
         key:"商品",
@@ -91,7 +91,6 @@ Page({
       })
       // 清除本地数据
       // wx.clearStorageSync('商品');
-
   },
 
   /**

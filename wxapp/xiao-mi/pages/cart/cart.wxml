@@ -20,8 +20,8 @@
       <block wx:for="{{goodsDetail}}" wx:key="index">
         <view class="carts-box">
           <view class="icon">
-          <!-- <image src="./circle.png" bindtap="account" /> -->
-            <image src="./circle.png" bindtap="account" wx:if="{{selectedIcon}}" />
+         
+             <icon type='{{item.selected?"success":"circle"}}' color='{{item.selected?"#ff6801":""}}' data-index="{{index}}" bindtap='account'></icon>
           </view>
           <view class="goods-img">
             <image src="{{item.selectPic}}" />
@@ -41,7 +41,7 @@
 
     <view class="footer">
       <view class="icon">
-        <image src="{{selectPic}}" bindtap="selectedAll"/>
+        <icon type='{{selectedIcon?"success":"circle"}}' color='{{selectedIcon?"#ff6801":""}}' bindtap='accountTotalPrice'></icon>
       </view>
       <view class="allselected" >
         <text>全选</text>

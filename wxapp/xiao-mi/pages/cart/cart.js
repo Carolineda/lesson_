@@ -5,11 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // toShopping
+    
+    selectedNum:[],
     cartNull: true,
     goodsDetail: [],
     totalPrice: '',
-    selectedIcon:true
+    // selected:"",
+    selectedIcon:false
   },
 
  toShopping:function(){
@@ -27,39 +29,36 @@ Page({
     if(goodsDetail.length != 0) {
       console.log(goodsDetail)
       that.setData({
-        goodsDetail,
-        cartNull: false
-      })
-      // this.totalPrice()
-      if(!selectedIcon)
-      {
-        this.account()
-        selectedIcon:true
-      }
-      
+        goodsDetail, 
+        cartNull: false  
+      }) 
+     
     } 
   },
-
-  // account:function(){
-  //   let goodsDetail = this.data.goodsDetail
-  //   let sum = 0
-  //   for(let item of goodsDetail) {
-  //     sum += item.now_price * item.num
-  //   }
-  //   this.setData({
-  //     totalPrice: sum
-  //   })
-  //   // console.log(sum)
-  // },
-
-  selectedAll:function(){
+//   account: function(e) {
+//     console.log(e)
+//     let selectedNum = this.data.selectedNum;
+//     let idx = e.currentTarget.dataset.index;
+//     let selected = selectedNum[idx];
+//     selectedNum[idx]= !selected;
+//     this.setData({
+//       selectedNum: selectedNum,
+//     }); 
+//     // wx.setStorageSync('cart_data', cart_have);
+//  },
+  accountTotalPrice:function(){
     let goodsDetail = this.data.goodsDetail
+    let selectedIcon = this.data.selectedIcon
+    selectedIcon = !selectedIcon;
+
     let sum = 0
     for(let item of goodsDetail) {
       sum += item.now_price * item.num
     }
     this.setData({
-      totalPrice: sum
+      totalPrice: sum,
+      selectedIcon: selectedIcon
+     
     })
     // console.log(sum)
   },

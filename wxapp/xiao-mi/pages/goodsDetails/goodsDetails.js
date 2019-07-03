@@ -51,13 +51,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  // 接收商品页面的id 
   onLoad: function (options) {
     const id = options.id;
       let that  = this;
       console.log(options)
       that.setData({
         id:options.id
-
       })   
       that.found(id)
   },
@@ -67,7 +67,6 @@ Page({
     })
     console.log(found)
     this.setData({
-      // imgUrls: found[0].imgUrls,
       imgUrls:found[0].imgUrls,
       brief:found[0].brief,
       name:found[0].name,
@@ -76,7 +75,6 @@ Page({
       details_img:found[0].details_param,
       param_img:found[0].param_img,
       txt_content:found[0].txt_content
-
     })
   },
 

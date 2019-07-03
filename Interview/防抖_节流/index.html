@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>防抖节流</title>
+</head>
+<body>
+  <div class="debounce">
+    <button id="submit">提交</button>
+  </div>
+  <script>
+    // function test () {
+    //   console.log('提交成功')
+    // }
+
+      // 封装防抖方法  每一次点击都要把上一次时间换成现在时间
+      function debounce(fn,time){
+        let previous = 0, timer = null;
+        // 将debounce处理结果当做函数返货 支持多个参数
+        return function(...args){
+          //  获取当前时间转换成时间戳，时间单位是毫秒
+          let now =+ new Date()   //转换成时间戳:时间标记
+
+          // 判断上次触发的时间和本次触发的时间差是否小于时间间隔time  上次时间：previous
+          if(now - previous < time){
+            //小于的话 则本次触发设立一个新的定时器  定时器时间结束后执行点击事件fn
+            if(timer) clearTimeout(timer) 
+             timer = setTimeout(()=>{ //定时器
+              previous = now
+              fn.apply(this,args)
+             },time)
+          } else  //当满足需求
+          {
+            // 第一次执行或者时间间隔超出设定的时间 执行fn
+            previous = now
+            fn.apply(this,args)  //此时的this指向的是window 为传参数的同时修改this的作用域
+             
+          }
+        }
+      }
+
+      // 节流函数的用法
+      const oDebounce = debounce(()=>test(),3000)
+      function test () {
+        console.log('提交成功')
+        }
+        
+    let oSubmit = document.getElementById('submit')
+    oSubmit.addEventListener('click',oDebounce)
+  </script>
+</body>
+</html>
