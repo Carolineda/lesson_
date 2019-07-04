@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>instanceOf原理</title>
+</head>
+<body>
+  <script>
+    let a = 'hello',
+      b = 123,
+      c = true,
+      d = undefined,
+      e = null,
+      // ------
+      f = {},
+      g = [],
+      h = function () { };
+      // console.log(typeof(b))
+      // console.log(g instanceof Array)
+
+      // 实现原理
+      // 显示原型 隐式原型 其中的关联
+      // function Student(name){
+      //   this.name = name
+      // }
+      // Student.prototype.Setage = function () {
+      //   this.age = 18
+      // }
+      // let wn = new Student('dahuang')
+      // console.log(wn.__proto__)
+      // console.log(Student.prototype)    //wn.__proto__=== Student.prototype  打印出一个构造器
+
+
+
+        // instanceOf原理
+        function instance_of(L,R) {    //在此l：fn  R是类型  判断fn是否是R类型
+          let O = R.prototype
+          L=L.__proto__
+          while(true){
+            if(L === null) {  //已经找到顶 下一层Object(万物返回对象)
+            return false
+            }
+            if(O === L){
+              return true
+              L= L.__proto__
+            }
+         
+          }
+        }
+
+        console.log(instance_of(g,Array))
+
+
+      // 准确判断数据类型判断基础数据类型和复杂数据类型
+      Object.prototype.toString.call()
+      // Object.prototype.toString会取得对象的一个内部属性，并把其转化成一个字符串类型
+      // 然后依据这个内部属性，返回一个'[Oject Array]'
+      // 然后用call将作用域将放到[Oject Array]里面去  然后我们可以获取任何内部的属性
+      // 再把类型检测转化为字符串比较
+      console.log(Object.prototype.toString.call(1))
+  </script>
+</body>
+</html>
