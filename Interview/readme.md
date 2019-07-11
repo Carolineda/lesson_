@@ -24,3 +24,7 @@ webpack
 
 ## vue vuex数据仓库
   组件通信
+
+##数组
+ 1.Math.round
+ 2.Math.ceil
