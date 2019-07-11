@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jsop</title>
+</head>
+<body>
+  <div>
+    jsop 页面
+  </div>
+
+  <!-- 定义callback -->
+  <script>
+    // function callback(res){
+    //   console.log('jsop 返回结果',res)
+    // }
+  </script>
+  <!-- cdn.com/a.js?=3.0 -->
+  <!-- <script src="http://localhost:9999/api/jsop?callback=callback123">     //把其返回的内容当成js -->
+  <!-- callback123({"name":"name1","age":18}) -->
+
+      <!-- 内容实现 jsop -->
+
+      <script>
+       const jsop = function(url) {
+         return new Promise((resolve,reject) => {
+          const callbackName = 'callback';
+          // 定义一个方法
+          window[callbackName] = function(res) {
+
+          }
+          const scriptNode = document.createElement('script')
+          scriptNode.src = url.indexOf('?') === -1 ? `${url}?callback=${callbackName}` : `${url}&callback=${callbackName}`
+          // scriptNode.src = `${url}?callback=${callbackName}`
+          scriptNode.addEventListener('error',function() {
+            delete window[callbackName];
+            document.body.removeChild(scriptNode)
+            reject('js 加载失败')
+          })
+          document.body.appendChild(scriptNode)
+         })
+       }
+    jsop('http://localhost:9999/api/jsop')
+       .then(res => {
+         console.log(res)
+       })
+      </script>
+</body>
+</html>
