@@ -1,7 +1,7 @@
 ## 安装React 
     1.  安装react   npm i create-react-app -g
 
-    - 创建一个react项目名为：react-base   create-react-app react-base
+    - 创建一个react项目名为react-base:   create-react-app react-base
     2. 启动项目 ： cd react-base
                   yarn start
 
