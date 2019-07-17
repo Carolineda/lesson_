@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Generate函数</title>
+</head>
+<body>
+  <script>
+  
+    function* test () {
+    console.log(1)
+    let a =  yield 1
+    // let a =  yield false   next是yield后面的值 也可是函数
+
+    console.log('a',a)
+    let b =  yield 2
+    console.log('b',b)
+    let c = yield 3
+    console.log('c',c)
+    }
+    // 运行test 是惰性的 不能直接执行test(),test()只能生成一个对象，对象有一个{next}属性，通过
+    // 调用next 一步步执行
+    var g = test();
+    let gn = g.next();
+    while(!gn.done){
+      gn = g.next(gn.value)
+    }
+    // g.next()
+    // g.next()
+    // g.next()
+
+    // 让generate 函数 自己全部执行完；
+    
+    function* test1() {
+      let a = yield true;
+      console.log('a',a)
+      let b = yield 1000;
+      console.log('b',b)
+    }
+
+
+    function autoRun(generateFun) {
+      let g = generateFun()
+      let gn = g.next()
+      while(!gn.done){
+        gn = g.next(gn.value)
+      }
+    }
+      autoRun1(test1)
+      autoRun1(test)
+
+
+      // 递归方法实现
+function autoRun1(generateFun) {
+  var g = generateFun();
+  function next(data) {
+    var result = g.next(data);     //result返回值value 和done
+    if(result.done) return;
+    next(result.value);
+  }
+  next()
+}
+
+      // (async function(){
+      //   let a = await fooPromise();
+      //   let b = await barPromise();
+      //   console.log(1)
+      // })()
+
+      // 一层层执行下去
+      // fooPromise().then(
+      //   let a = await fooPromise();
+      //   let b = await barPromise();
+      //   console.log(1)
+      // )
+
+      let fooPromise = function () {
+        return new Promise((resolve,reject) => {
+          setTimeout(()=> {
+            resolve('fooPromise')
+          },1000)
+        })
+      }
+
+
+      let barPromise = function () {
+        return new Promise((resolve,reject) => {
+          setTimeout(()=> {
+            resolve('barPromise')
+          },2000)
+        })
+      }
+
+        // 转化为genetator
+      _asyncToGenerator(
+         function*(){
+        let a = yield fooPromise();
+        console.log('_asyncToGenerator a',a)
+        let c = yield barPromise();
+        console.log('_asyncToGenerator b',b)
+        let b = yield 2;
+        console.log('_asyncToGenerator c',c)
+      }
+      )
+      // fooPromise().then(() => {
+      //   let b = yield 2;
+      // })
+
+      function _asyncToGenerator(generateFun) {
+        return new Promise((resolve,reject) => {
+          let gen = generateFun();
+          function step(key,arg){
+            // info 代表的是value 和 done  [key] = index
+            let info = {};
+            
+            // key == next  参数接受的处理
+            info = gen[key]();
+            if(info.done) {
+              resolve()  
+            } else{
+              return Promise.resolve(info.value).then((v) => { //用Promise.resolve 在此比较通用 不受其顺序的影响
+                return step('next',v)  //递归调用 next()不断调用
+              })   
+            }
+          };
+        //
+        })
+      }
+  </script>
+</body>
+</html>
