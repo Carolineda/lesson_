@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>一般函数和箭头函数</title>
+</head>
+<body>
+  <script>
+    class Foo {
+      foo () {
+
+      }
+      bar = () => {
+
+      /**
+       * bar 是一个属性 
+       * foo 是proptotype对象上的方法
+      */
+      }
+    }  
+
+    const a = new Foo();
+    console.log(a)
+  </script>
+
+  <script>
+    // 上面的对应的完整代码
+    function Foo (params) {
+      this.bar = () => {
+
+      }
+
+    }
+
+    Foo.prototype.foo = function (params) {
+
+    }
+  
+  </script>
+</body>
+</html>
