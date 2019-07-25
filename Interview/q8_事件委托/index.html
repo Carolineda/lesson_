@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>事件委托</title>
+</head>
+<body>
+  <div id="box">
+    <ul id="ul-list">
+      <li>10</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+  </div>
+
+
+  <script> 
+  // 点击li获取li内容
+    window.onload = function () {
+      var oUl = document.getElementById('ul-list')
+
+      // 1.事件委托
+      // oUl.addEventListener('click',function(e){
+      //   console.log(e)
+      //   var target = e.target || e.srcElement    //li
+      //   console.log(target.innerHTML)
+      // })
+
+      // 2.不使用事件委托
+    var oLi = oUl.getElementsByTagName('li')   //获取到的是数组
+    for(let i in oLi) {
+      oLi[i].index = Number(i) + 1        //转换成Numeber类型 
+      oLi[i].onclick = function() {
+        console.log(this.innerHTML)
+      }
+    }
+    }
+  </script>
+</body>
+</html>
