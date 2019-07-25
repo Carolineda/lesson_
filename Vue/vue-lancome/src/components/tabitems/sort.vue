@@ -1,7 +1,4 @@
 <template>
-
-  
-
   <div class="sort">
     <v-header></v-header>
     <!-- 搜索 -->
@@ -9,25 +6,62 @@
       <V-search></V-search>
     </div>
 
-    <div class="category"> 
+    <div class="category">
       <div class="menu-wrapper">
         <!-- 目录左边引入组件 -->
-        <el-collapse v-model="activeName" accordion>
-          <el-collapse-item title="护肤" name="1" >
-            <div :class="{isshow}" @click="isshow=!isshow" class="menuTitle">产品类型</div>
-            <div :class="{isshow}" @click="isshow=!isshow" class="menuTitle">肌肤需求</div>
-            <div :class="{isshow}" @click="isshow=!isshow" class="menuTitle">产品系列</div>
+        <!-- <el-collapse v-model="activeName" accordion>
+          <el-collapse-item :title="menus[index].type" v-for="(item,index) in menus" :key="index" @change="selectMenu(index)">
+            <div
+              v-for="(e, n) in item.sorts ? item.sorts :  []"
+              :key="n"
+              @click="selectMenu(index, n)"
+              class="menuTitle"
+              :class="{'current' : currentIndex == n}"
+            >{{e.goodstype}}</div>
           </el-collapse-item>
-          <el-collapse-item title="彩妆" name="2">
-            <div :class="{isshow}" @click="isshow=!isshow" class="menuTitle">唇妆</div>
-            <div :class="{isshow}" @click="isshow=!isshow" class="menuTitle">底妆</div>
-            <div :class="{isshow}" @click="isshow=!isshow" class="menuTitle">眼妆</div>
-          </el-collapse-item>
-          <el-collapse-item title="香水" name="3"></el-collapse-item>
-          <el-collapse-item title="夏季热卖新品" name="4" ></el-collapse-item>
-          <el-collapse-item title="畅销榜单" name="5" ></el-collapse-item>
-        </el-collapse>
-
+        </el-collapse>-->
+        <el-menu
+          class="el-menu-vertical-demo"
+          @open="handleOpen"
+          @close="handleOpen"
+          text-color="#000"
+          active-text-color="#ffd04b"
+        >
+          <el-submenu :index="String(index+1)" v-for="(item,index) in menus" :key="index" :class="{'current' : currentIndex == index}">
+            <template slot="title">
+              <span>{{item.type}}</span>
+            </template>
+            <el-menu-item :index="String(index+1)+'-'+String(n+1)" v-for="(e, n) in item.sorts ? item.sorts :  []" :key="n" @click="selectMenu(index, n)" :class="{'current' : currentIndex == n}">
+              {{e.goodstype}}
+            </el-menu-item>
+          </el-submenu>
+        </el-menu>
+        <!-- <el-menu
+          default-active="2"
+          class="el-menu-vertical-demo"
+          @open="selectMenu(index)"
+        >
+          <el-submenu
+            index="1"
+            v-for="(item,index) in menus"
+            :key="index"
+            @change="selectMenu(index)"
+          >
+            <template slot="title">
+              <span>{{menus[index].type}}</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item
+                index=index+1-n+1
+                v-for="(e, n) in item.sorts ? item.sorts :  []"
+                :key="n"
+                @click="selectMenu(index, n)"
+                class="menuTitle"
+                :class="{'current' : currentIndex == n}"
+              >{{e.goodstype}}</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+        </el-menu>-->
 
         <div class="menu-down">
           <p>我的福利</p>
@@ -36,76 +70,87 @@
       </div>
 
       <!-- 右边 -->
-      <div class="content-wrapper">
-        <div class="menu-name">
-           产品类型
-        </div>
+      <div class="content-wrapper" ref="contentWrapper">
+        <div class="menu-name">产品类型</div>
 
-      <div class="goodsType">
-        <div class="content-img">
-          <img src="https://res.lancome.com.cn/resources/2019/2/25/15510633519926180_460X460.png?version=20190702233736694" 
-          alt=""
-          mode="aspectFill"
-          style="width:100%">
-          <div class="brief">卸妆&洁面</div>
+        <div class="goodsType">
+          <div
+            class="content-img"
+            v-for="(itemdetail,index) in menusRight"
+            :key="index"
+            @click="selectMenu(index,$event)"
+          >
+            <img :src="itemdetail.goodsImg" alt mode="aspectFill" style="width:100%" />
+            <div class="brief">{{itemdetail.goodstitle}}</div>
+          </div>
         </div>
-        <div class="content-img">
-          <img src="https://res.lancome.com.cn/resources/2019/6/27/15616273080232075_920X920.jpg?version=20190702233736694" 
-          alt=""
-          mode="aspectFill"
-          style="width:100%">
-          <div class="brief">美容液&爽肤水 </div>
-        </div>
-      <div class="content-img">
-          <img src="https://res.lancome.com.cn/resources/2019/6/20/15610452727638141_460X460.jpg?version=20190702233736694" 
-          alt=""
-          mode="aspectFill"
-          style="width:100%">
-          <div class="brief">精华</div>
       </div>
-        <div class="content-img">
-          <img src="https://res.lancome.com.cn/resources/2019/6/20/15610453273874336_460X460.jpg?version=20190702233736694" 
-          alt=""
-          mode="aspectFill"
-          style="width:100%">
-          <div class="brief">眼部护理</div>
-        </div>
-       <div class="content-img">
-          <img src="https://res.lancome.com.cn/resources/2018/6/9/15285367331056501_460X460.jpg?version=20190702233736694" 
-          alt=""
-          mode="aspectFill"
-          style="width:100%">
-          <div class="brief">乳液</div>
-        </div>
-         <div class="content-img">
-          <img src="https://res.lancome.com.cn/resources/2019/5/27/15589469130178237_460X460.jpg?version=20190702233736694" 
-          alt=""
-          mode="aspectFill"
-          style="width:100%">
-          <div class="brief">面霜</div>
-        </div>
-       </div>
-
-      </div>
-      
     </div>
   </div>
 </template>
 
 <script>
 import search from "@/components/search";
-import header from '@/components/header'
+import header from "@/components/header";
 export default {
   data() {
     return {
       activeName: "1",
-      isshow: false
+      menus: [],
+      currentIndex: null,
+      menusRight: []
     };
   },
-  methods: {},
+  methods: {
+    selectMenu(index, n) {
+      console.log(typeof(index), index, n);
+      if (n > -1) {
+        // this.$set(this.menus[index].sorts[n], 'active', true)
+        this.menusRight = this.menus[index].sorts[n].typedetail;
+      } else {
+        console.log(n)
+        this.menusRight =
+          this.menus[Number(index)-1].typedetail || this.menus[Number(index)-1].sorts[0].typedetail;
+      }
+      // this.menusRight = this.menus[index].sorts ? this.menus[index].sorts[n].typedetail : this.menus[index].typedetail
+      // let menu = [];
+      // this.menus.forEach(itemdetail => {
+      //   itemdetail.forEach(itemdetailChild => {
+      //     if (itemdetail.count) {
+      //       itemdetail.push(itemdetail);
+      //     }
+      //   });
+      // });
+    },
+    handleOpen(index, keyPath) {
+      console.log(index, keyPath);
+      this.menusRight =
+          this.menus[Number(index)-1].typedetail || this.menus[Number(index)-1].sorts[0].typedetail;
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
+    }
+  },
   components: {
     "V-search": search,
-    'v-header':header
+    "v-header": header
+  },
+  created() {
+    this.$http
+      .get(
+        "https://www.easy-mock.com/mock/5d36f12f8cf9694121098d48/lancome-sort/sort"
+      )
+      .then(res => {
+        console.log(res);
+        this.menus = res.body.data;
+        console.log(this.menus);
+        this.menusRight = res.body.data[0].sorts[0].typedetail;
+      });
+  },
+  computed: {
+    goods() {
+      return this.menus.length > 0 ? this.menus[0].sorts[0].typedetail : [];
+    }
   }
 };
 </script>
@@ -124,13 +169,11 @@ export default {
   font-size: 11px;
   display: block;
 }
-.isshow {
+.current {
   color: rgb(247, 81, 141);
   display: block;
   border-left: 2px solid rgb(247, 81, 141);
-  padding-left: 8px;
 }
-
 .menu-wrapper {
   margin-top: 8px;
   width: 120px;
@@ -147,15 +190,13 @@ export default {
   color: #000;
   font-size: 13px;
   margin-left: 8px;
- 
 }
 .el-collapse-item__content {
   padding-bottom: 0;
 }
-.el-icon-arrow-right:before {
+.el-icon-arrow-down:before {
   content: none;
 }
-
 /* 右边 */
 .category {
   margin-top: 110px;
@@ -164,20 +205,19 @@ export default {
   /* width: 300px; */
 }
 
-.content-wrapper{
+.content-wrapper {
   width: 300px;
   height: 500px;
 }
-.menu-name{
+.menu-name {
   height: 40px;
   line-height: 40px;
   position: fixed;
   margin-left: 10px;
   width: 300px;
   background: #fff;
-  
 }
-.goodsType{
+.goodsType {
   padding: 30px 0 0 0;
   margin-top: 5px;
   text-align: center;
@@ -189,7 +229,7 @@ export default {
   line-height: 30px;
   margin-top: 20px;
 }
-.brief{
+.brief {
   font-size: 12px;
   width: 100px;
 }

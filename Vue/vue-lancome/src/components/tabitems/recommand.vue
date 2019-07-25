@@ -17,6 +17,14 @@
     <div class="recommend-img" v-if="contentSelected">
       <img :src="item[1].imgUrl" mode="aspectFill" style="width:100%" alt />
     </div>
+         <div class="recommend-items" v-if="contentSelected" >
+        <div class="recommend-item" v-for="(context,index) in item[1].itemsData" :key="index">
+          <img :src="context.itemPic" alt mode="aspectFill" style="width:100%" />
+          <div class="item-name">{{context.name}}</div>
+          <p class="item-price">￥{{context.price}}</p>
+        </div>
+      </div>
+
 
     <!-- items content-->
     <div class="items">
@@ -27,13 +35,13 @@
           <p class="item-price">￥{{context.price}}</p>
         </div>
 
-         <div class="recommend-items" v-if="contentSelected" >
-        <div class="recommend-item" v-for="(ct,index) in item[1].itemsData" :key="index">
-          <img :src="ct.itemPic" alt mode="aspectFill" style="width:100%" />
-          <div class="item-name">{{ct.name}}</div>
-          <p class="item-price">￥{{ct.price}}</p>
+         <!-- <div class="recommend-items" v-if="contentSelected" >
+        <div class="recommend-item" v-for="(context,index) in item[1].itemsData" :key="index">
+          <img :src="context.itemPic" alt mode="aspectFill" style="width:100%" />
+          <div class="item-name">{{context.name}}</div>
+          <p class="item-price">￥{{context.price}}</p>
         </div>
-      </div>
+      </div> -->
 
       </div>
 
@@ -50,8 +58,7 @@ export default {
     return {
       contentSelected: false,
       itemsData: [],
-      item: [],
-      imgUrl: ""
+      item: []
     };
   },
   components: {
@@ -73,7 +80,7 @@ export default {
       .then(res => {
         console.log(res);
         this.item = res.body.data;
-        // console.log(item);
+        console.log(this.item);
       });
   }
 };

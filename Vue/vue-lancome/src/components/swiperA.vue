@@ -105,7 +105,7 @@ p {
 }
 .price {
   height: 50px;
-  line-height: 50px;
+  line-height: 70px;
   color: #000000;
   font-size: 16px;
   font-weight: bold;

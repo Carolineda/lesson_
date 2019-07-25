@@ -99,13 +99,13 @@ h2{
   height: 50px;
   line-height: 50px;
 }
-p {
+.detail p{
   font-size: 14px;
   color: #666666;
 }
 .price {
   height: 50px;
-  line-height: 70px;
+  line-height: 50px;
   color: #000000;
   font-size: 16px;
   font-weight: bold;
