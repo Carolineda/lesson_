@@ -31,3 +31,20 @@ webpack
 
 
 ## 面试
+
+##状态码
+  301：永久
+  302:
+  304
+  401
+
+-token soket vue-cli3.0  node mysql
+
+http  socket.io   流node.js    框架  预编译   正则表达式(邮箱 QQ 手机)
+
+- 事件委托：
+  
+
+
+##腾讯面试题：index.js
+  
