@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>getAllHtmlTag</title>
+  <style>
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  </style>
+</head>
+<body>
+<!-- 计算页面的标签 获取页面元素 排列-->
+  <div>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <script>
+    function getAllHtmlTag() {
+      const tags = [...document.querySelectorAll('*')].map(dom => dom.tagName);
+      console.log(tags);
+      // 如何统计出现的频率
+      const mapper = {}
+      for(let i =0;i<tags.length;i++){
+        const tag = tags[i];
+        if(mapper[tag] ===void 0 ){    //void 0 表示没有
+          mapper[tag] = 1;
+
+        }else{
+          mapper[tag] +=1;
+        }
+      }                            //是个json  转换成数组再排序
+    //  将对象转为数组  将value  key
+      console.log(Object.entries(mapper))
+    return  Object.entries(mapper).sort((a,b) => b[1]-a[1]).map(q=> q[0]);  //降序排列
+    }
+    console.log(getAllHtmlTag())
+  </script>
+</body>
+</html>
