@@ -21,7 +21,7 @@ axios.interceptors.request.use(
     // 即使本地存在token 也有可能是过期值 第一次登录获取token值会有时间限制,所以在拦截器中响应返回状态进行判断
     // const token = store.state.token
     // token && (config.header.Authorization = token)
-    config.header['Content-Type'] = 'application/x-www-form-urlencoded'     // 请求头的类型  请求类型数据的方式默认设置为表单
+    config.headers['Content-Type'] = 'application/x-www-form-urlencoded'     // 请求头的类型  请求类型数据的方式默认设置为表单
     return config
   },
   error => {
