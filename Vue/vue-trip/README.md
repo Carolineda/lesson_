@@ -17,6 +17,7 @@ views   -- router去到的页面
     4.安装axios    npm install axios
     5.安装qs       npm install qs     qs序列化数据
     6.安装vuex     npm install vuex
+    搞得地图插件      npm install vue-amap -S
 
 ## ES6
 1.concat连接数组

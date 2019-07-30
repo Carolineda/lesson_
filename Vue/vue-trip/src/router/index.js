@@ -11,7 +11,7 @@ const commonRoutes = [
   {path: '/404',component: () => import('@/components/RouterError/404')},  
   {path: '/401',component: () => import('@/components/RouterError/401')},
   {path: '*',redirect:'/404'}, //  路由跳转失败 
-  {path: '/',redirect:'/404'}   //重定向 根路径
+  {path: '/',redirect:'/trip'}   //重定向 根路径
 
 ]
 
