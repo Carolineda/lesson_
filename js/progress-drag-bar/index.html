@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>进度条</title>
+  <link rel="stylesheet" href="./progress.css">
+  <style>
+.progress-bar {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background-color: rgba(0,0,0,0.3);
+}
+.progress-bar .progress,
+.progress-bar .progress-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.progress-bar .progress {
+  z-index: 2;
+  background-color: #ffd700;
+}
+.progress-bar .progress-button {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: #ffd700;
+  z-index: 3;
+  top: -6px;
+  margin-left: -5px;
+}
+  </style>
+</head>
+<body>
+  <div id="progress1">
+   
+  </div>
+
+
+  <script type="module">
+    import Progress from './progress.js';
+    new Progress('#progress1',{
+      progress:0.5
+    })
+  
+  </script>
+  
+</body>
+</html>
