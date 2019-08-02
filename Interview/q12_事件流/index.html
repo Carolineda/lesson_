@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Js事件流</title>
+  <style>
+  #page{
+    width: 500px;
+    height: 500px;
+    background-color: rgb(213, 236, 199);
+  }
+  #content{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(235, 206, 206);
+  }
+  #box{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(202, 221, 221);
+  }
+  </style>
+</head>
+<body>
+
+  <div id="page">
+    <div id="content">
+      <div id="box">点击</div>
+    </div>
+  </div>
+<!-- addEventListener 第三个参数是判断为捕获还是冒泡 true 捕获  false 冒泡 -->
+  <script>
+    let box = document.getElementById('box')
+    let content = document.getElementById('content')
+    let page = document.getElementById('page')
+
+    box.addEventListener('click',function(){
+      console.log('box')
+    },true)
+    
+    content.addEventListener('click',function(){
+      console.log('content')
+    },true)
+    page.addEventListener('click',function(){
+      console.log('page')
+    },true)
+  </script>
+</body>
+</html>

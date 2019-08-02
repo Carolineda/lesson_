@@ -2,8 +2,6 @@
 // [8,2,5,9,7]
 
 function quickSort (arr){
-
-
   // 
   if(arr.length <=1) {
     return arr
