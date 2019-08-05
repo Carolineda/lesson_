@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组去重</title>
+</head>
+<body>
+  <script>
+    var array = [1,1,'2','2']
+    function unique(array){
+      var res = []
+      for( let i = 0,arrayLen = array.length;i<arrayLen.length;i++){
+        // for (let j = 0,resLen = res.length;j<res.length;j++){
+        //   if(array[i] === res[j]){
+        //     break
+        //   }
+        // }
+        // // 
+        // if(j === resLen){
+        //   res.push(array[i])
+        // }
+
+        // 方法二
+        var current = array[i]
+        if(res.indexOf(current) === -1){
+          res.push(current)
+        }
+
+
+      }
+      return res
+    }
+    console.log(unique(array))
+  </script>
+  
+
+</body>
+</html>
