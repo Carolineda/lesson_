@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>反转链表</title>
+</head>
+<body>
+  <script>
+//     输入: 1->2->3->4->5->NULL
+//     输出: 5->4->3->2->1->NULL
+    var listNode = {
+      val:1,
+      next:{
+        val:2,
+        next:
+        {
+        val:3,
+        next:null
+        }
+      }
+    }
+    var reserveList = function (head) {
+        // head 头结点 把第一个节点的next指向上一个null 反转
+        var cur = head,
+            pre = null;
+        while (cur) {
+          var t = cur.next
+            cur.next = pre;
+            pre = cur;
+            // cur.next = pre 
+            cur = t;       //把next节点修改
+        }
+            return pre   //当前的头结点
+
+      }
+      console.log(reserveList(listNode))
+  </script>
+</body>
+</html>
