@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>definePorperty怎么解决监测数组问题</title>
+</head>
+
+<body>
+  <script>
+    Array.prototype.$push = function (...arg) {
+      console.log('数组发生变化')
+      return this.push(...arg)         //改写原来方法的API  新定义方法$push
+    }
+    var arr = [0, 2, 5]
+    arr.$push(4)
+    // console.log(arr)
+
+    // 保留原来方法
+    var originPop = Array.prototype.pop
+    Array.prototype.pop = function () {   //自定义pop  把原来的pop方法覆盖了
+      console.log('pop劫持')
+      originPop.apply(this, arguments)
+    }
+    arr.pop()
+    // console.log(arr)
+
+
+    var arrMethods = ['push', 'pop', 'shift', 'unshift', 'splice']
+    arrMethods.forEach((methodName) => {
+      let originMethod = Array.prototype[methodName]  //
+      Array.prototype[methodName] = function () {
+        console.log('改变了')
+        return originMethod.apply(this, arguments)
+      }
+    })
+    arr.shift('9')
+  </script>
+</body>
+
+</html>
