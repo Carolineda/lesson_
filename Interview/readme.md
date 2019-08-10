@@ -1,34 +1,4 @@
-##考题点
 
- 1.页面加载图片量过多，提高用户体验  解决通过懒加载（分布加载）
-
- 2.（浮动）双飞翼布局
-
- 3. 算法 Leetcode
-    算法 {
-     - 数组去重
-
-        }
-
- 4.COMMON NODE引入模块
-
- 5.计算机安全 网站
- 
- 6. promise
-
-webpack
-
-##浏览器怎么渲染
-
-7
-数据结构
-
-## vue vuex数据仓库
-  组件通信
-
-##数组
- 1.Math.round
- 2.Math.ceil
 
 ## 面试
 
@@ -107,29 +77,87 @@ addEventListener(监听属性) 第三个参数是判断为捕获还是冒泡 tru
         仅在当前浏览器窗口关闭前有效，关闭浏览器失效，不能长久保存 
 
 
+  ##q15 Js拖拽功能的实现
+  点击图片实现移动
+  onmousedown
+  onmousemove
+  onmouseup
+
+##q19 任务列表(event loop)
+  宏任务（macrotask ）
+     setTimeout
+     setInterval
+     requestAnimationFrame
+     Html解析
+     Js的主线程
+     页面加载
+     用户交互
+   
+  
+  
+  微任务（microtask 
+    promise
+    process.nextTick
+    mutation.oberver  (node的异步)
+  - Script(主程序代码) ---> process.nextTick ----> promise ---->setTimeout ----> setInterval --->setImmediate --->I/O ---->UI reading
+
+## q20 函数表达式和函数声明
+在立即执行函数
+  函数声明和函数表达式不同
+  函数声明只在函数内部有效 并且此绑定是常量绑定
+  不能对常量进行赋值
+      var b = 10
+      (function () {
+        b = 20   console.log(b) 
+      })()  报错
+
+##q21 浏览器的重塑回流
+  浏览器渲染页面过程：
+    1.解析HTML 生成Dom树
+    2.解析Css  生成CSSOM树
+    3.将DOM 和 CSSOM 生成render树
+    4.回流：根据生成的render树进行回流，得到结点的几何信息
+    5.重绘：根据render树和回流得到的信息，得到结点的绝对像素
+    6.将像素发给GPU
+
+  回流： 当Render Tree中部分或全部元素的尺寸、结构、或某些属性发生改变时，浏览器重新渲染部分或全部文档的过程称为回流。
+  重绘： 当页面中元素样式的改变并不影响它在文档流中的位置时（例如：color、background-color、visibility等），浏览器会将新样式赋予给元素并重新绘制它，这个过程称为重绘。
+
+
+  ##q22 Vue中的双向绑定
+    1.属性拦截 Object.definePorperty 
+    2.通过diff算法计算需要更新页面渲染的部分
+
+
+  ## Vue 父子组件通信 子组件能否修改接收到的props里面的值
+    不能
+    子组件不能修改父组件prop  prop单向数据流，为了保证数据的单向流动，便于数据的追踪 避免数据混乱
 
 
 
+## Vue/React 中列表组件key作用
+  基于在没有key的情况下 diff算法更快
+  key是给每一个虚拟节点的唯一id,可以依靠key,更准确, 更快的拿到旧的节点中中对应的虚拟节点会根据新节点的key去对比旧节点数组中的key，从而找到相应旧节点（这里对应的是一个key => index 的map映射）。如果没找到就认为是一个新增节点。而如果没有key，那么就会采用遍历查找的方式去找到对应的旧节点。
 
 
 
+## 数组的拼接方法
+  1.concat()方法生成了一个新的数组
+  2.展开运算符 
+  var arr1=['a','b','c'];
+  var arr2=[...arr1,'d','e'];     //输出['a','b','c','d','e']
+  3.展开运算符+ push
+   ```js
+  var arr1=['a','b','c'];
+  var arr2=['d','e'];
+  arr1.push(...arr2);           //输出['a','b','c','d','e']
+  ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+##parseInt()               
+      ['2','1', '11'].map((item, i) => parseInt(item, i));
+  输出 [2, NaN, 3]
+eg:'2' -> 0    '1'->1  '11'-> 2  parseInt(param,进制)
 
 
 
@@ -145,13 +173,6 @@ addEventListener(监听属性) 第三个参数是判断为捕获还是冒泡 tru
     scrollHeight : 表示所有区域的高度，包含因为滚动被隐藏的部分
     clientTop : 表示边框border的厚度，在未指定的情况下 一般为0
     scrollTop : 滚动后超出屏幕之外被隐藏的高度
-
-
-##q15 Js拖拽功能的实现
-  点击图片实现移动
-  onmousedown
-  onmousemove
-  onmouseup
 
 
 

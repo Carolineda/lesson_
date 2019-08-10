@@ -76,3 +76,4 @@ function Animal (name) {
   console.log(cat.sleep())
   console.log(cat instanceof Animal)
   console.log(cat instanceof Cat)
+ 

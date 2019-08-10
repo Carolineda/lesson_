@@ -4,6 +4,7 @@ function myPromise(constructor) {
   self.value = undefined; // 定义一个resolve时候的状态
   self.reason = undefined;  // 定义一个reject时候的状态
 
+  
   function resolve(value) { 
     if (self.status === "pending") {
       self.value = value;

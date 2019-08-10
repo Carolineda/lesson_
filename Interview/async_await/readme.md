@@ -1,6 +1,6 @@
 ## Async   Await
   async 函数就是 Generator 函数的语法糖。
-await 后面不是用promise不能保证后面代码的顺序执行
+  await 后面不是用promise不能保证后面代码的顺序执行
 
 
 

@@ -1,7 +1,7 @@
 ## 判断数据原型
 
   ## typeof 判断其类型
-  - 不能根据typeof精确判断获取数据类型。typeof智能判断基本数据类型  
+  - 不能根据typeof精确判断获取数据类型。typeof智能判断基本数据类型 ：Undefined、Null、Boolean、Number、String 
   - instanceOf：判断数据类型 返货true或false 不能用来判断基础类型, 可以用来判断数据类型 只能判断复杂数据类型
 
 ##精确的判断数据类型： 
